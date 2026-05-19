@@ -1,0 +1,736 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* 폰트모음 */
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'RomanticGumi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/GumiRomanceTTF.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'GoyangDeokyang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GoyangDeogyang.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+/* header---------------------------- */
+
+
+#header_wrap {
+    height: 90px;
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    z-index: 99;
+}
+
+.header {
+    height: 90px;
+    width: 1320px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* ---------logo -------------------*/
+.logo {
+    width: 80px;
+    height: 79px;
+    transition: transform 0.3s ease;
+    transform-origin: bottom center;
+}
+
+/* 호버 시 애니메이션 실행 */
+
+/* 마우스를 올렸을 때(hover)의 상태 */
+.logo:hover{
+  animation: tilting 1s ease-in-out infinite;
+}
+
+/* 좌우로 까딱거리는 동작 정의 */
+@keyframes tilting {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }  /* 왼쪽으로 5도 */
+  75% { transform: rotate(5deg); }   /* 오른쪽으로 5도 */
+  100% { transform: rotate(0deg); }  /* 다시 제자리 */
+}
+
+.icon {
+    display: flex;
+    justify-content: end;
+    margin-top: -50px;
+}
+
+.icon li a {
+    padding-left: 20px;
+}
+
+/* icon 부분 호버할 때 원이 생기도록 css */
+.icon li {
+    position: relative;
+    /* 기준점 설정 */
+}
+
+.icon li::before {
+    content: '';
+    width: 35px;
+    height: 35px;
+    background-color: #8acc7d;
+    opacity: 0;
+    /* 평소엔 투명 */
+    border-radius: 50%;
+    /* 원 모양 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-20%, -60%);
+    /* 아이콘 정중앙 */
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    /* 아이콘 이미지 뒤에 */
+}
+
+.icon li:hover::before {
+    opacity: 0.4;
+    /* 반투명하게 나타남 */
+}
+
+
+/* header_bottom - 배경 + gnb ---------*/
+.header_bottom {
+    background: url(../img/header+gnb/header_b.png) center no-repeat;
+    background-size: 100% 100%;
+    height: 250px;
+}
+
+/* gnb */
+.gnb_wrap{
+    width: 1320px;
+    margin: 0 auto;
+}
+.gnb {
+    display: flex;
+    justify-content: center;
+    padding-top: 180px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.gnb li a {
+    display: block;
+    font-family: 'RomanticGumi';
+    width: 40px;
+    height: 53px;
+    padding:  8px 40px 0 40px;
+    font-weight: 100;
+}
+
+/* gnb 호버할 때 효과 */
+.gnb li {
+    transition: transform 0.3s ease;
+}
+
+.gnb li:hover {
+    transform: translateY(-6px); /* 위로 6px 이동 */
+}
+
+/*main- 동영상 자리------------------ */
+.main {
+    width: 100%;
+    background-color: wheat;
+    height: 1100px;
+}
+
+/* 부사네 설명 */
+.talk {
+    background: url(../img/header+gnb/busane_flower.png) bottom no-repeat;
+    text-align: center;
+    color: #6D6E71;
+    font-family: 'GoyangDeokyang';
+    line-height: 30px;
+    font-size: 17px;
+}
+.busane_talk_wrap{
+    margin: 0 auto;
+    width: 850px;
+    position: relative;
+    /* busane_talk 기준 상자! */
+}
+.busane_talk{
+    position: absolute;
+    top: -500px;
+    left: 230px;
+}
+.logo2{
+    width: 90px;
+    height: 89px;
+}
+.house {
+    transition: opacity 0.3s ease;
+    width: 63px;
+    height: 48px;
+}
+.house:hover {
+    content: url(../img/header+gnb/house.png); 
+    /* 호버 시 이미지 교체 */
+}
+
+/* 구름 배경 (best4/후기/부사네x소상공인) */
+.cloud {
+    position: relative; /* 기준점 */
+    height: 2474px;
+    margin-top: 100px;
+    overflow: hidden;
+}
+/* 배경 이미지 */
+.cloud-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill; /* 꽉 채우기 */
+    object-position: top center;
+    z-index: 0; /* 맨 뒤로 */
+}
+/* 기존 내용들이 배경 위에 보이도록 */
+.cloud > *:not(.cloud-bg) {
+    position: relative;
+    z-index: 1;
+}
+
+.cloud h1 {
+    text-align: center;
+    padding-top: 170px;
+    font-family: 'RomanticGumi';
+}
+.best{
+    width: 1320px;
+    margin: 70px auto;
+    height: 350px;
+    text-align: center;
+}
+.best li a{
+    width: 263px;
+}
+.best4{
+    display: flex;
+    justify-content: space-between;
+}
+/* best4 호버할 때 효과 */
+.best4 li {
+    transition: transform 0.3s ease;
+}
+
+.best4 li:hover {
+    transform: translateY(-6px); /* 위로 6px 이동 */
+}
+
+
+/* slide ==============================*/
+.review{
+    background: url(../img/header+gnb/review_bg.png) no-repeat center;
+    text-align: center;
+    height: 82px;
+    width: 291px;
+    font-size: 27px;
+    position: absolute;
+    top: 30px;
+    transform: translateX(-50%);
+    line-height: 100px;
+    padding-right: 70px;
+    font-family: 'GoyangDeokyang';
+}
+
+/* slide  */
+#slide {
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 30px;
+    padding-top: 150px;
+    height: 610px;
+    background-color: #FFCCD1;
+}
+
+#slide img{
+    width: 280px;
+    height: 480px;
+}
+
+
+/*width를 본인에 맞게 수정하여 사용하세요! --아래 3개*/
+.slide_inner {
+    width: 4120px;
+    /*ul길이의 두배!*/
+    display: flex;
+    animation: rotate 40s linear infinite;
+}
+
+.slide_inner ul {
+    display: flex;
+    width: 2060px;
+    /*li크기를 전부합한것보다 더 여유있게.*/
+    justify-content: space-between;
+}
+
+.slide_inner ul li {
+    width: 280px;
+    margin-right: 60px;
+}
+
+/*width를 본인에 맞게 수정하여 사용하세요!*/
+
+/* .slide_inner ul li:nth-child(1) {
+    padding-top: 10px
+}
+.slide_inner ul li:nth-child(2) {
+    padding-top: 10px
+}
+
+.slide_inner ul li:nth-child(3) {
+    padding-top: 10px
+}
+
+.slide_inner ul li:nth-child(4) {
+    padding-top: 10px
+}
+
+.slide_inner ul li:nth-child(5) {
+    padding-top: 10px
+} */
+
+.slide_inner ul li img {
+    width: 100%;
+}
+
+.slide_inner:hover {
+    animation-play-state: paused;
+}
+
+/*슬라이드에 호버시 애니메이션이 멈추게 만듦*/
+
+#slide p {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: rotate(-50%);
+    cursor: pointer;
+}
+
+@keyframes rotate {
+    0% {
+        margin-left: 0;
+    }
+
+    100% {
+        margin-left: -2060px;
+        /*slide_inner의 ul길이와 동일하게 - 설정합니다!*/
+    }
+}
+
+/* 둥실 떠오르는 효과 */
+@keyframes floatUp {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-12px); } /* 최고점 */
+    100% { transform: translateY(0); }     /* 제자리 */
+}
+
+.slide_inner ul li img {
+    width: 100%;
+    transition: filter 1s ease; /* 그림자 부드럽게 */
+}
+
+.slide_inner ul li:hover img {
+    animation: floatUp 0.6s ease-in-out;
+    filter: drop-shadow(0px 8px 6px rgba(0,0,0,0.15)); /* 뜨는 느낌 강조 */
+}
+.slide_inner ul li:hover .slide_text{
+    opacity: 100%;
+}
+
+/* 이미지가 멈췄을 때 내용 같이 보이도록 설정 */
+/* 1. 텍스트의 기본 스타일 (평소에는 안 보이게) */
+.slide_text {
+    position: absolute;
+    bottom: -170px; /* 이미지 아래쪽에 위치 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background: rgba(255, 246, 252, 0.925); /* 반투명 배경 */
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #333;
+    opacity: 0; /* 숨김 */
+    transition: all 0.5s ease; /* 부드러운 변화 */
+    pointer-events: none; /* 텍스트가 마우스 이벤트를 방해하지 않게 */
+}
+
+/* 2. li에 마우스를 올렸을 때 설정 */
+.slide_inner ul li {
+    position: relative; /* 텍스트의 위치 기준점 */
+    overflow: visible;  /* 텍스트가 밖으로 나와도 보이게 */
+}
+
+.slide_inner ul li:hover img {
+    /* 기존 작성하신 floatUp 애니메이션 */
+    animation: floatUp 0.6s ease-in-out forwards; 
+    filter: drop-shadow(0px 8px 6px rgba(0,0,0,0.15));
+}
+
+.slide_inner ul li:hover .slide_text {
+    opacity: 1; /* 보이게 함 */
+    /* 이미지와 같은 느낌으로 살짝 위로 이동 */
+    transform: translateX(-50%) translateY(-55px); 
+}
+
+/* 부사네x소상공인======================== */
+.coll{
+    width: 1320px;
+    margin: 30px auto;
+    position: relative;
+    /* 작은 집의 기준점! */
+}
+.title_coll{
+    text-align: center;
+    background: url(../img/header+gnb/ti_소상공인.png) no-repeat center;
+    height: 154px;
+}
+.title_coll h2{
+    padding-top: 30px;
+    padding-bottom: 15px;
+    font-family: 'GoyangDeokyang';
+    font-size: 28px;
+}
+
+.coll_1{
+    margin-top: 50px;
+    width: 1320px;
+    display: flex;
+    justify-content: space-between;
+}
+.coll_1 h2{
+    font-family: 'GoyangDeokyang';
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.house2{
+    position: absolute;
+    top: 420px;
+    left: 450px;
+    transition: opacity 0.3s ease;
+    width: 63px;
+    height: 48px;
+}
+.house2:hover {
+    content: url(../img/header+gnb/house.png); 
+    /* 호버 시 이미지 교체 */
+}
+
+.house3{
+    position: absolute;
+    top: 760px;
+    left: 1250px;
+    transition: opacity 0.3s ease;
+    width: 63px;
+    height: 48px;
+}
+.house3:hover {
+    content: url(../img/header+gnb/house.png); 
+    /* 호버 시 이미지 교체 */
+}  
+
+/* 부사네에 대한 모든 것 ===============*/
+.all{
+    text-align: center;
+    margin-top: 50px;
+}
+.thank{
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.all_1{
+    width: 1320px;
+    margin: 70px auto;
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+    font-size: 13px;
+    line-height: 23px;
+}
+.all_1 img{
+    width: 550px;
+    height: 374px;
+}
+.all_1 p{
+    margin-top: -140px;
+    margin-left: 45px;
+}
+
+/* 모다모디=========================== */
+.modamodi{
+    background: url(../img/header+gnb/모다모디_bg.png) center no-repeat;
+    background-size: cover;
+    height: 1611px;
+    padding-top: 50px;
+}
+.box{
+    width: 1320px;
+    margin: 0 auto;
+    height: 100px;
+    position: relative;
+    /* 스티커들의 기준점! */
+}
+.modamodi1{
+    position: absolute;
+    left: -200px;
+    top: 100px;
+}
+.modamodi2{
+    position: absolute;
+    left: 600px;
+}
+.modamodi3{
+    /* 오뎅 */
+    position: absolute;
+    left: 1000px;
+    top: 00px;
+}
+.modamodi4{
+    position: absolute;
+    left: 800px;
+    top: 1000px;
+}
+.modamodi5{
+    position: absolute;
+    left: 10px;
+    top: 1200px;
+}
+.m_text{
+    color: #fff;
+    font-family: 'GoyangDeokyang';
+    text-align: left;
+    width: 500px;
+    position: absolute;
+    left: 950px;
+    top: 450px;
+}
+.m_text p{
+    margin-top: 40px;
+    line-height: 37px;
+    font-size: 20px
+}
+.house4{
+    position: absolute;
+    top: 370px;
+    left: 0px;
+    transition: opacity 0.3s ease;
+    width: 63px;
+    height: 48px;
+}
+.house4:hover {
+    content: url(../img/header+gnb/house.png); 
+    /* 호버 시 이미지 교체 */
+}
+
+/* 인스타그램==================== */
+.insta{
+    width: 1320px;
+    margin: 0 auto;
+    position: relative;
+    /* 인스타 사진 기준! */
+}
+.insta_img{
+    position: absolute;
+    left: 800px;
+    top: -300px;
+}
+.m_text2{
+    color: #3c3c3c;
+    font-family: 'GoyangDeokyang';
+    text-align: left;
+}
+.m_text2 p{
+    margin-top: 140px;
+
+    line-height: 37px;
+    font-size: 20px
+}
+.house5{
+    /* position: absolute;
+    top: 150px;
+    left: 0px; */
+    transition: opacity 0.3s ease;
+    width: 63px;
+    height: 48px;
+}
+.house5:hover {
+    content: url(../img/header+gnb/house.png); 
+    /* 호버 시 이미지 교체 */
+}
+
+/* footer=========================== */
+#footer{
+    background: url(../img/header+gnb/footer_bg.png) top no-repeat;
+    background-size: 100%;
+    height: 390px;
+    margin-top: 100px;
+}
+.child_wrap{
+    width: 1320px;
+    margin: 0 auto;
+    height: 100px;
+    position: relative;
+    /* 아이 기준점! */
+}
+/* 아이 애니메이션 주기 */
+.floating-child {
+  position: absolute; 
+  bottom: 0px;       
+  left: 50px;        
+  width: 121px;      
+}
+
+.floating-child img {
+  width: 100%;
+  height: auto;
+  /* 2. 애니메이션 적용 */
+  animation: float 3s ease-in-out infinite;
+}
+
+/* 3. 애니메이션 효과 정의 (키프레임) */
+@keyframes float {
+  0% {
+    transform: translateY(0px); /* 시작 지점 */
+  }
+  50% {
+    transform: translateY(-6px); /* 중간에 10px만큼 살짝 위로 이동 */
+  }
+  100% {
+    transform: translateY(0px); /* 다시 제자리로 */
+  }
+}
+.footer_text{
+    width: 1320px;
+    margin: 0 auto;
+    padding-top: 120px;
+}
+.footer_w{
+    display: flex;
+    justify-content: space-around;
+    color: #6D6E71;
+    font-family: 'GoyangDeokyang';
+    font-size: 15px;
+    line-height: 30px;
+}
+.f_logo{
+    text-align: center;
+    font-size: 13px;
+}
+.kakaotalk{
+    color: #505050;
+}
+.sns_t{
+    margin-bottom: 10px;
+}
+.sns img{
+    padding-right: 10px;
+}
+
+
+/* footer 로고 호버하였을 때 */
+.f_logo img {
+  width: 120px;
+  transition: transform 0.3s ease;
+  /* 회전의 중심축을 아래쪽 가운데로 설정 (고개 까딱이는 느낌) */
+  transform-origin: bottom center;
+}
+
+/* 마우스를 올렸을 때(hover)의 상태 */
+.f_logo:hover img{
+  animation: tilting 1s ease-in-out infinite;
+}
+
+/* 좌우로 까딱거리는 동작 정의 */
+@keyframes tilting {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }  /* 왼쪽으로 5도 */
+  75% { transform: rotate(5deg); }   /* 오른쪽으로 5도 */
+  100% { transform: rotate(0deg); }  /* 다시 제자리 */
+}
