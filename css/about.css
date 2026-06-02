@@ -1,0 +1,993 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+body{
+    color: #161616;
+    font-family: 'NanumBarunGothic';
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+#wrap_wrap {
+    min-width: 1400px;
+    overflow: hidden;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;  /* 세로 방향으로 쌓기 */
+}
+
+/* 폰트모음 */
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'RomanticGumi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/GumiRomanceTTF.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GoyangDeokyang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GoyangDeogyang.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'NanumBarunGothic';
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+    font-weight: 700;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'NanumBarunGothic';
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+    font-weight: 300;
+    font-display: swap;
+}
+
+/* 마우스 설정하기 */
+/* 전체 요소를 선택하여 강제로 커서 고정 */
+* {
+  cursor: url('../img/sub/mouse.png') 10 10, auto !important;
+}
+
+/* header---------------------------- */
+
+
+#header_wrap {
+    height: 90px;
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    z-index: 99;
+}
+
+.header {
+    height: 90px;
+    width: 1320px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* ---------logo -------------------*/
+.logo {
+    width: 80px;
+    height: 79px;
+    transition: transform 0.3s ease;
+    transform-origin: bottom center;
+}
+
+/* 호버 시 애니메이션 실행 */
+
+/* 마우스를 올렸을 때(hover)의 상태 */
+.logo:hover {
+    animation: tilting 1s ease-in-out infinite;
+}
+
+/* 좌우로 까딱거리는 동작 정의 */
+@keyframes tilting {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-5deg);
+    }
+
+    /* 왼쪽으로 5도 */
+    75% {
+        transform: rotate(5deg);
+    }
+
+    /* 오른쪽으로 5도 */
+    100% {
+        transform: rotate(0deg);
+    }
+
+    /* 다시 제자리 */
+}
+
+.icon {
+    display: flex;
+    justify-content: end;
+    margin-top: -50px;
+}
+
+.icon li a {
+    padding-left: 20px;
+}
+
+/* icon 부분 호버할 때 원이 생기도록 css */
+.icon li {
+    position: relative;
+    /* 기준점 설정 */
+}
+
+.icon li::before {
+    content: '';
+    width: 35px;
+    height: 35px;
+    background-color: #8acc7d;
+    opacity: 0;
+    /* 평소엔 투명 */
+    border-radius: 50%;
+    /* 원 모양 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-20%, -60%);
+    /* 아이콘 정중앙 */
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    /* 아이콘 이미지 뒤에 */
+}
+
+.icon li:hover::before {
+    opacity: 0.4;
+    /* 반투명하게 나타남 */
+}
+
+
+/* header_bottom - 배경 + gnb ---------*/
+.header_bottom {
+    background: url(../img/header+gnb/header_b.png) center no-repeat;
+    background-size: 100% 100%;
+    height: 250px;
+}
+
+/* gnb */
+.gnb_wrap {
+    width: 1320px;
+    margin: 0 auto;
+}
+
+.gnb {
+    display: flex;
+    justify-content: center;
+    padding-top: 180px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.gnb li a {
+    display: block;
+    font-family: 'RomanticGumi';
+    width: 40px;
+    height: 53px;
+    padding: 8px 40px 0 40px;
+    font-weight: 100;
+}
+
+.gnb li img {
+    width: 50px;
+    height: 54px;
+}
+
+/* gnb 호버할 때 효과 */
+.gnb li {
+    display: flex;
+    flex-direction: column;
+    /* 세로 정렬 */
+    align-items: center;
+    /* 가로 중앙 정렬 */
+    transition: transform 0.3s ease;
+}
+
+.gnb li:hover {
+    transform: translateY(-6px);
+    /* 위로 6px 이동 */
+}
+
+/* 공통 막대 설정 */
+.bar {
+    display: none;
+    width: 70px;
+    height: 5px;
+    margin-top: 5px; 
+    margin-left: 10px;
+    background-color: transparent; /* 색상은 각 클래스에서 지정 */
+}
+.gnb li:hover .bar{
+    height: 10px;
+    display: block;      /* 호버했을 때도 보이도록 설정 */
+    transition: transform 0.3s ease linear;
+}
+
+/* active 클래스가 있을 때만 막대 표시 */
+.gnb li.active .bar {
+    display: block;
+}
+
+/* 색상별 분기 처리 */
+.about .bar { background-color: #8acc7d; }
+.store .bar { background-color: #00bdff; }
+.with .bar  { background-color: #6d6e71; }
+.contact .bar { background-color: #ff487c; }
+
+
+
+/* main  ============================*/
+.main{
+    background: url(../img/about/main_bg.png) center no-repeat;
+    background-size: 100% 100%;
+    height: 500px;
+    text-align: center;
+}
+.main_t{
+    color: #fff;
+    font-family: 'RomanticGumi';
+    font-size: 55px;
+    padding-top: 150px;
+    text-shadow: #4444446c 2px 2px 2px;
+    line-height: 70px;
+}
+.main_s{
+    /* width: 454px; */
+    font-family: 'GoyangDeokyang';
+    border: 2px snow solid;
+    color: #313131;
+    padding: 10px 30px;
+    border-radius: 20px;
+    background-color: #fff;
+    margin-top: 20px;
+    text-align: center;
+    display: inline-block;
+}
+
+/* text============================ */
+#text{
+    height: 980px;
+    width: 1320px;
+    margin: 0 auto;
+}
+.t_text{
+    padding-top: 50px;
+}
+.b_1{
+    margin: 20px 0;
+}
+.t_text p{
+    font-size: 16px;
+    line-height: 32px;
+}
+.s{
+    margin: 20px 0;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+.logo_text{
+    text-align: right;
+    font-size: 16px;
+    line-height: 32px;
+    margin-top: 20px;
+}
+.logo_tle{
+    font-family: 'GoyangDeokyang';
+    font-size: 26px;
+    margin: 15px 0;
+}
+.flex_2{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+/* 내용작성 시작================= */
+/* 전체 bg 컬러 적용하기 */
+#bg{
+    width: 100%;
+    height: 2350px;
+    background-color: #E9F2B6;
+}
+
+/* what - 하는 일 3가지 */
+
+.what h2{
+    font-family: 'GoyangDeokyang';
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.what{
+    width: 1320px;
+    margin: 0 auto;
+    padding-top: 100px;
+    height: 750px;
+    text-align: center;
+    position: relative;
+    /* icon 기준 상자! */
+}
+/* 기존 고정 배경 삭제하고 클래스별로 분리 */
+.w_photo {
+    height: 467px;
+    /* background 제거 */
+}
+
+/* 각 탭별 배경 이미지 */
+.w_photo.bg_tab1 {
+    background: url(../img/about/발굴합니다.png) no-repeat center;
+}
+
+.w_photo.bg_tab2 {
+    background: url(../img/about/선물합니다..png) no-repeat center;
+}
+
+.w_photo.bg_tab3 {
+    background: url(../img/about/협업합니다.png) no-repeat center;
+}
+
+/* 클릭 구현 by클로드 */
+.icon_wrap{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 520px;
+    left: 480px;
+    gap: 30px;
+}
+.desc{
+    margin-top: 500px;
+    text-align: center;
+    border: 1px #fff solid;
+    width: 550px;
+    display: inline-block;
+    border-radius: 20px;
+    padding: 20px 30px;
+    background-color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* 탭 콘텐츠 기본 숨김 */
+.tab_content {
+    display: none;
+}
+
+/* 활성화된 탭만 보임 */
+.tab_content.active {
+    display: block;
+}
+
+/* 말풍선 띄용띄용 애니메이션 */
+@keyframes floating {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
+}
+
+.bubble1 {
+    animation: floating 2s ease-in-out infinite;
+    margin-top: -150px;
+    position: absolute;
+    left: 450px;
+    top: 650px;
+}
+.bubble2 {
+    animation: floating 2s ease-in-out infinite;
+    margin-top: -150px;
+    position: absolute;
+    left: 585px;
+    top: 650px;
+}
+.bubble3 {
+    animation: floating 2s ease-in-out infinite;
+    margin-top: -150px;
+    position: absolute;
+    left: 720px;
+    top: 650px;
+}
+
+/* 말풍선이 여러 개일 때 시차 주기 */
+.bubble:nth-child(2) {
+    animation-delay: 0.3s;
+}
+.bubble:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+/* 아이콘 버튼 활성화 표시 */
+.tab_btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    /* opacity: 0.5; */
+    transition: opacity 0.3s ease;
+    margin-top: 50px;
+}
+
+.tab_btn.active {
+    opacity: 1;
+}
+
+/* --------------------------------- */
+
+
+/* 함께 성장 (카운트 효과) */
+.up h2{
+    font-family: 'GoyangDeokyang';
+    text-align: center;
+    margin: 70px 0;
+}
+.up_1{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.up_1 p{
+    margin-top: 10px;
+    margin-right: 20px;
+}
+.house {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* cubic-bezier가 띠용! 효과의 핵심 */
+    width: 63px;
+    height: 48px;
+    display: inline-block;
+}
+.house:hover {
+     content: url(../img/header+gnb/house.png);
+    transform: scale(1.3);   /* 호버 시 1.3배 커짐 */
+}
+.count{
+    display: flex;
+    justify-content: center;
+    height: 300px;
+    text-align: center;
+}
+.count li{
+    margin: 0 30px;
+}
+.count li a{
+    width: 250px;
+    height: 250px;
+}
+.count li:nth-child(1){
+    background: url(../img/about/count_1.png) no-repeat center;
+}
+.count li:nth-child(2){
+    background: url(../img/about/count_2.png) no-repeat center;
+}
+.count li:nth-child(3){
+    background: url(../img/about/count_3.png) no-repeat center;
+}
+.count_t{
+    width: 250px;
+    font-weight: 500;
+    text-align: center;
+    font-size: 22px;
+    padding-top: 50px;
+}
+.count_num{
+    font-size: 70px;
+    padding-top: 20px;
+    font-weight: 700;
+}
+
+/* 지도 시작! */
+.map h2{
+    font-family: 'GoyangDeokyang';
+    text-align: center;
+    margin: 70px 0;
+}
+.map{
+    text-align: center;
+}
+
+/* 지도 불빛 구현하기 */
+/* 지도 래퍼 - 점 위치 기준점 */
+.map {
+    text-align: center;
+    position: relative; /* 추가 */
+    display: inline-block; /* 추가 - 이미지 크기에 맞게 */
+    width: 100%; /* 추가 */
+}
+
+.map img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* 펄스 점 공통 */
+.pulse-dot {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+/* ✅ 호버 시 z-index 높이기 추가 */
+.pulse-dot:hover {
+    z-index: 30;  /* 다른 점(10)보다 높게, 카드(20)보다도 높게 */
+}
+
+.pulse-dot .dot-core {
+    width: 12px;
+    height: 12px;
+    background: #C4694F;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.2s;
+}
+
+.pulse-dot:hover .dot-core {
+    transform: scale(1.5);
+}
+
+/* 펄스 링 3개 - 시차 적용 */
+.pulse-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #C4694F;
+    opacity: 0.5;
+    animation: pulseRing 2s ease-out infinite;
+}
+
+.pulse-ring-2 { animation-delay: 0.6s; }
+.pulse-ring-3 { animation-delay: 1.2s; }
+
+@keyframes pulseRing {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(4);
+        opacity: 0;
+    }
+}
+
+/* 툴팁 */
+.pulse-dot .tooltip {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    color: #333;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+}
+
+.pulse-dot:hover .tooltip {
+    opacity: 1;
+}
+
+/* 지도 이미지 + 점 묶음 */
+.map_inner {
+    position: relative;
+    display: inline-block; /* 이미지 크기에 딱 맞게 */
+    margin: 0 auto;
+}
+
+.map_inner img {
+    display: block;
+}
+.map_inner {
+    width: 600px; /* 실제 map.png 가로 크기 */
+}
+
+/* 점 초기 상태 - 숨김 */
+.pulse-dot {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0;                          /* 추가 - 처음엔 숨김 */
+    transition: opacity 1s ease;      /* 추가 - 부드럽게 등장 */
+}
+
+/* 등장 상태 */
+.pulse-dot.visible {
+    opacity: 1;
+}
+
+/* 옆에 카드도 같이 등장하도록 하기 by 클로드 */
+.side_card {
+    position: absolute;
+    width: 220px;
+    background: #fff0fa;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    overflow: hidden;
+    z-index: 20;
+
+    /* 기본 숨김 상태 */
+    opacity: 0;
+    transform: translateY(15px);  /* 아래에서 시작 */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none;
+}
+
+/* 왼쪽 카드 - 점 기준 왼쪽에 위치 */
+.left-card .side_card {
+    right: 100px;   /* 점 왼쪽 */
+    top: -80px;
+}
+
+/* 오른쪽 카드 - 점 기준 오른쪽에 위치 */
+.right-card .side_card {
+    left: 100px;    /* 점 오른쪽 */
+    top: -80px;
+}
+
+/* 호버 시 카드 등장 */
+.pulse-dot:hover .side_card {
+    opacity: 1;
+    transform: translateY(0);   /* 위로 올라옴 */
+    pointer-events: auto;
+}
+
+/* 카드 이미지 */
+.side_card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+    margin: 0;    /* 기존 map img margin 초기화 */
+}
+
+/* 카드 텍스트 영역 */
+.side_card_text {
+    padding: 12px 14px;
+}
+
+.side_card_name {
+    font-family: 'GoyangDeokyang';
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #222;
+}
+
+.side_card_desc {
+    font-size: 12px;
+    line-height: 18px;
+    color: #666;
+}
+
+
+
+
+/* footer=========================== */
+#footer {
+    position: relative;
+    height: 390px;
+    margin-top: 100px;
+    padding: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+}
+
+/* 파도 움직이도록 구현하기 by클 */
+/* 파도 배경 - ::before로 분리해서 움직이게 */
+#footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10%;
+    /* 좌우 여유 공간 확보 */
+    width: 120%;
+    /* 넉넉하게 넓게 */
+    height: 100%;
+    background: url(../img/header+gnb/footer_bg.png) top center no-repeat;
+    background-size: cover;
+    z-index: 0;
+    animation: waveMove 10s ease-in-out infinite;
+}
+
+/* 파도 움직임 */
+@keyframes waveMove {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-4%);
+    }
+
+    /* 왼쪽으로만 */
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* 기존 자식 요소들 배경 위로 */
+.child_wrap,
+.footer_text {
+    position: relative;
+    z-index: 2;
+}
+
+/* 아이 떠다니는 효과 - 기존 유지 */
+.floating-child img {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+.child_wrap {
+    width: 1320px;
+    margin: 0 auto;
+    height: 125px;
+    position: relative;
+    /* 아이 기준점! */
+}
+
+/* 아이 애니메이션 주기 */
+.floating-child {
+    position: absolute;
+    bottom: 0px;
+    left: 50px;
+    width: 121px;
+    z-index: 2;
+}
+
+.floating-child img {
+    width: 100%;
+    height: auto;
+    /* 2. 애니메이션 적용 */
+    animation: float 3s ease-in-out infinite;
+}
+
+/* 3. 애니메이션 효과 정의 (키프레임) */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+        /* 시작 지점 */
+    }
+
+    50% {
+        transform: translateY(-6px);
+        /* 중간에 10px만큼 살짝 위로 이동 */
+    }
+
+    100% {
+        transform: translateY(0px);
+        /* 다시 제자리로 */
+    }
+}
+
+.footer_text {
+    width: 1320px;
+    margin: 0 auto;
+    padding-top: 120px;
+}
+
+.footer_w {
+    display: flex;
+    justify-content: space-around;
+    color: #6D6E71;
+    font-family: 'GoyangDeokyang';
+    font-size: 15px;
+    line-height: 30px;
+}
+
+.f_logo {
+    text-align: center;
+    font-size: 13px;
+}
+
+.kakaotalk {
+    color: #505050;
+}
+
+
+/* footer 로고 호버하였을 때 */
+.f_logo img {
+    width: 120px;
+    transition: transform 0.3s ease;
+    /* 회전의 중심축을 아래쪽 가운데로 설정 (고개 까딱이는 느낌) */
+    transform-origin: bottom center;
+}
+
+/* 마우스를 올렸을 때(hover)의 상태 */
+.f_logo:hover img {
+    animation: tilting 1s ease-in-out infinite;
+}
+
+/* 좌우로 까딱거리는 동작 정의 */
+@keyframes tilting {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-5deg);
+    }
+
+    /* 왼쪽으로 5도 */
+    75% {
+        transform: rotate(5deg);
+    }
+
+    /* 오른쪽으로 5도 */
+    100% {
+        transform: rotate(0deg);
+    }
+
+    /* 다시 제자리 */
+}
+
+
+.sns_t {
+    margin-bottom: 10px;
+}
+
+.sns img {
+    margin-right: 10px;
+}
+
+/* sns 부분 호버할 때 원이 생기도록 css */
+
+.snsi {
+    display: flex;
+    justify-content: end;
+    margin-top: 10px;
+}
+
+.snsi li a {
+    padding-left: 20px;
+}
+
+/* icon 부분 호버할 때 원이 생기도록 css */
+.snsi li {
+    position: relative;
+    /* 기준점 설정 */
+}
+
+.snsi li::before {
+    content: '';
+    width: 35px;
+    height: 35px;
+    background-color: #ffffff;
+    opacity: 0;
+    /* 평소엔 투명 */
+    border-radius: 50%;
+    /* 원 모양 */
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform: translate(-20%, -60%);
+    /* 아이콘 정중앙 */
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    /* 아이콘 이미지 뒤에 */
+}
+
+.snsi li:hover::before {
+    opacity: 0.4;
+    /* 반투명하게 나타남 */
+}

@@ -13,7 +13,23 @@ ul {
 }
 
 body {
-    overflow-x: hidden;  /* 가로 스크롤 방지 */
+    color: #161616;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#wrap_wrap {
+    min-width: 1400px;
+    overflow: hidden;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    /* 세로 방향으로 쌓기 */
 }
 
 /* 폰트모음 */
@@ -87,6 +103,7 @@ body {
     font-weight: normal;
     font-display: swap;
 }
+
 @font-face {
     font-family: 'GoyangDeokyang';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GoyangDeogyang.woff') format('woff');
@@ -129,16 +146,31 @@ body {
 /* 호버 시 애니메이션 실행 */
 
 /* 마우스를 올렸을 때(hover)의 상태 */
-.logo:hover{
-  animation: tilting 1s ease-in-out infinite;
+.logo:hover {
+    animation: tilting 1s ease-in-out infinite;
 }
 
 /* 좌우로 까딱거리는 동작 정의 */
 @keyframes tilting {
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(-5deg); }  /* 왼쪽으로 5도 */
-  75% { transform: rotate(5deg); }   /* 오른쪽으로 5도 */
-  100% { transform: rotate(0deg); }  /* 다시 제자리 */
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-5deg);
+    }
+
+    /* 왼쪽으로 5도 */
+    75% {
+        transform: rotate(5deg);
+    }
+
+    /* 오른쪽으로 5도 */
+    100% {
+        transform: rotate(0deg);
+    }
+
+    /* 다시 제자리 */
 }
 
 .icon {
@@ -190,10 +222,11 @@ body {
 }
 
 /* gnb */
-.gnb_wrap{
+.gnb_wrap {
     width: 1320px;
     margin: 0 auto;
 }
+
 .gnb {
     display: flex;
     justify-content: center;
@@ -207,338 +240,277 @@ body {
     font-family: 'RomanticGumi';
     width: 40px;
     height: 53px;
-    padding:  8px 40px 0 40px;
+    padding: 8px 40px 0 40px;
     font-weight: 100;
 }
-.gnb li img{
+
+.gnb li img {
     width: 50px;
     height: 54px;
 }
 
-
 /* gnb 호버할 때 효과 */
 .gnb li {
+    display: flex;
+    flex-direction: column;
+    /* 세로 정렬 */
+    align-items: center;
+    /* 가로 중앙 정렬 */
     transition: transform 0.3s ease;
 }
 
 .gnb li:hover {
-    transform: translateY(-6px); /* 위로 6px 이동 */
+    transform: translateY(-6px);
+    /* 위로 6px 이동 */
 }
 
-/* main ====================== */
-.main{
-    background: url(../img/poster.png) no-repeat center;
-    width: 100%;
-    height: 950px;
+/* 공통 막대 설정 */
+.bar {
+    display: none; 
+    width: 70px;
+    height: 5px;
+    margin-top: 5px; 
+    margin-left: 10px;
+    background-color: transparent; /* 색상은 각 클래스에서 지정 */
+}
+.gnb li:hover .bar{
+    height: 11px;
+    display: block;      /* 호버했을 때도 보이도록 설정 */
+    transition: transform 0.3s ease linear;
 }
 
-/* 내용 작성===================== */
-.talk{
-    text-align: center;
-    width: 1320px;
-    margin: 0 auto;
-    height: 768px;
-    box-sizing: border-box;
-    position: relative;
-    /* heart_t 기준 상자! */
-    cursor: pointer;  /* ← 추가: 마우스가 올라가면 손가락 모양 */
-}
-.talk_t{
-    text-align: center;
-    /* position: absolute; */
-    margin-top: -380px;
-    font-size: 18px;
-    line-height: 36px;
-    pointer-events: none;
-}
-.heart{
-    margin-left: 950px;
-    margin-top: -50px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
+/* active 클래스가 있을 때만 막대 표시 */
+.gnb li.active .bar {
     display: block;
-    pointer-events: auto;
-}
-.heart_t {
-    position: absolute;
-    top: 590px;
-    left: 1060px;
-    line-height: 25px;
-    font-weight: 600;
-    
-    /* 기본 숨김 상태 */
-    opacity: 0;
-    transform: translateY(8px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-    pointer-events: none;
-}
-.heart_wrap {
-    display: inline-block; /* 추가 — 크기가 없으면 이벤트가 안 잡힘 */
 }
 
-/* JS가 추가할 클래스 */
-.heart_wrap.hovered .heart_t {
-    opacity: 1;
-    transform: translateY(0);
+/* 색상별 분기 처리 */
+.about .bar { background-color: #8acc7d; }
+.store .bar { background-color: #00bdff; }
+.with .bar  { background-color: #6d6e71; }
+.contact .bar { background-color: #ff487c; }
+
+
+/* main  ============================*/
+.main {
+    background: url(../img/contact/main.png) center no-repeat;
+    background-size: 100% 100%;
+    height: 500px;
+    text-align: center;
 }
 
-/* 브랜드 이동 ======================== */
-#slide {
-    width: 100%;
-    height: 100px;
-    overflow: hidden;
-    position: relative;
-    padding-bottom: 50px;
-    padding-top: 50px;
+.main_t {
+    color: #fff;
+    font-family: 'RomanticGumi';
+    font-size: 55px;
+    padding-top: 150px;
+    text-shadow: #4444446c 2px 2px 2px;
+    line-height: 70px;
 }
 
-/*width를 본인에 맞게 수정하여 사용하세요! --아래 3개*/
-.slide_inner {
-    width: 3600px;
-    /*ul길이의 두배!*/
-    display: flex;
-    animation: rotate 15s linear infinite;
+.main_s {
+    /* width: 454px; */
+    font-family: 'GoyangDeokyang';
+    border: 2px snow solid;
+    color: #313131;
+    padding: 10px 30px;
+    border-radius: 20px;
+    background-color: #fff;
+    margin-top: 20px;
+    text-align: center;
+    display: inline-block;
 }
 
-.slide_inner ul {
-    display: flex;
-    width: 1800px;
-    /*li크기를 전부합한것보다 더 여유있게.*/
-    justify-content: space-around;
-    margin-top: -20px;
-}
 
-.slide_inner ul li {
-    width: 300px;
-}
 
-.slide_inner ul li img {
-    width: 50%;
-}
+/* --------------------------------- */
 
-.slide_inner:hover {
-    animation-play-state: paused;
-}
 
-/*슬라이드에 호버시 애니메이션이 멈추게 만듦*/
-
-#slide p {
-    position: absolute;
-    bottom: 0px;
-    left: 50%;
-    transform: rotate(-50%);
-    cursor: pointer;
-}
-
-@keyframes rotate {
-    0% {
-        margin-left: 0;
-    }
-
-    100% {
-        margin-left: -1800px;
-        /*slide_inner의 ul길이와 동일하게 - 설정합니다!*/
-    }
-}
-
-/* 사진 모음================================ */
-.photo{
+/* text */
+#text {
     width: 1320px;
     margin: 0 auto;
-    height: 770px;
-    box-sizing: border-box;
+}
+
+#text h2 {
+    font-family: 'GoyangDeokyang';
+    margin: 70px 0;
+}
+
+.text_box {
     display: flex;
-    justify-content: center;
-    position: relative;
-    z-index: 0;   /* footer::before(z-index: 0)보다 위, child(z-index: 2)보다 아래 */
+    justify-content: left;
 }
-.photo_box_wrap{
-    margin-left: -150px;
+
+.text_box li {
+    width: 540px;
+    height: 308px;
+    margin-right: 80px;
+    background-color: #FFEAEA;
+    border-radius: 50px;
 }
-.photo_box1{
-    margin-top: 20px;
-}
-/* 리플렛 ======================== */
-.hover_card_wrap {
-    position: relative;
-    display: inline-block;
+
+/* text_box li 호버 효과 */
+.text_box li {
+    transition: transform 0.3s ease, 
+                background-color 0.3s ease, 
+                box-shadow 0.3s ease; /* 추가 */
     cursor: pointer;
 }
 
-.hover_card {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.55);
+.text_box li:hover {
+    transform: translateY(-8px);           /* 위로 떠오름 */
+    background-color: #E9F2B6;            /* 색상 변경 */
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.12); /* 그림자 */
+}
+
+
+.text_box li a {
+    display: block;
+    padding: 30px;
+    margin-left: 35px;
+}
+.text_box h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.logo1{
+    width: 82px;
+    height: 80px;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+.logo2{
+    width: 82px;
+    height: 80px;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+.in_box{
+    margin-top: 30px;
+}
+
+
+/* 아이콘 */
+.icon_boxx {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-.hover_card_wrap:hover .hover_card {
-    opacity: 1;
-}
-
-.hover_card_desc {
-    color: #fff;
-    font-size: 16px;
-    line-height: 28px;
+    justify-content: left;
     text-align: center;
 }
 
-.hover_card_btn {
-    display: inline-block;
-    background-color: #fff;
-    color: #333;
-    padding: 10px 24px;
-    border-radius: 30px;
-    font-size: 14px;
-    font-weight: 600;
-    transition: background-color 0.3s ease, color 0.3s ease;
+.icon_boxx li {
+    width: 370px;
+    height: 370px;
+    background-color: #E9F8FD;
+    border-radius: 50px;
+    margin-right: 60px;
 }
 
-.hover_card_btn:hover {
-    background-color: #8acc7d;
-    color: #fff;
+.icon_boxx li a {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.icon_boxx h3{
+    margin: 10px 0;
 }
 
-/* 검정 상자 크기 조정하기 */
-/* 리플렛 - 현재 이미지 크기 기준으로 고정 */
-.photo_box1 .hover_card_wrap {
-    width: 636px;   /* 리플렛 이미지 크기에 맞게 조절 */
-    height: 346px;
+.icon_boxx img {
+    margin-top: 60px;
+    margin-bottom: 10px;
 }
 
-/* 티켓 - 리플렛과 동일한 크기로 고정 */
-.photo_box3 .hover_card_wrap {
-    width: 636px;   /* 리플렛과 동일 */
-    height: 250px;
+/* text_box li 호버 효과 */
+.icon_boxx li {
+    transition: transform 0.3s ease, 
+                background-color 0.3s ease, 
+                box-shadow 0.3s ease; /* 추가 */
+    cursor: pointer;
+}
+
+.icon_boxx li:hover {
+    transform: translateY(-8px);           /* 위로 떠오름 */
+    background-color: #E9F2B6;            /* 색상 변경 */
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.12); /* 그림자 */
+}
+
+.block {
+    width: 100px;
+    margin: 30px auto 0;
+    background-color: #e7e7e7;
+    border-radius: 50px;
+    font-size: 15px;
+    padding: 10px;
+    display: block;
+    text-align: center;
+        cursor: pointer;
+
+    /* 그림자 추가 */
+    box-shadow: 0px 4px 0px #cac8c8be;
+
+    /* 부드러운 전환 */
+    transition: all 0.1s ease;
+}
+/* 누를 때 효과 */
+.block:hover {
+    box-shadow: 0px 2px 0px #b0b0b0; /* 그림자 줄어듦 */
+    transform: translateY(2px);       /* 아래로 살짝 눌림 */
+    background-color: #d1d0d0;
+}
+
+/* 클릭 순간 */
+.block:active {
+    box-shadow: 0px 0px 0px #b0b0b0; /* 그림자 없어짐 */
+    transform: translateY(4px);       /* 더 눌림 */
 }
 
 
-.photo_box3{
+/* 자주 묻는 질문 */
+.mac{
+    width: 1320px;
+    margin: 0 auto;
+    background: url(../img/contact/mac.png) no-repeat center;
+    min-height: 942px;  
     margin-top: 50px;
-    text-align: center;
+    padding: 40px 10px;
+    position: relative;
+    /* mac_text의 기준 상자! */
 }
-.flag_banner{
-    margin-left: -250px;
-    height: 750px;
+h2 {
+    font-family: 'GoyangDeokyang';
 }
-
-/* 불꽃놀이============================ */
-
-.firework_wrap {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    /* 이 지점에서 이미지들이 퍼져나감 */
+.mac_text{
+    width: 1077px;
+    box-sizing: border-box;
+    position: relative;
+    top: 40px;
+    left: 120px;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
 }
-
-.fw {
-    position: absolute;
-    width: 80px;
-    opacity: 0;
-    transform: translate(-50%, -50%);
+.text_boxx{
+    display: flex;
 }
-
-/* 터지는 애니메이션 */
-/* 위쪽 */
-@keyframes burst1 {
-    0%   { opacity: 0; transform: translate(-50%, -50%) translate(0, 0) scale(0.3); }
-    30%  { opacity: 1; }
-    100% { opacity: 0; transform: translate(-50%, -50%) translate(0px, -320px) scale(1.2); }
+.title{
+    padding-top: 12px;
+    padding-left: 20px;
+    font-size: 19px;
+    font-weight: bold;
 }
-
-/* 오른쪽 위 */
-@keyframes burst2 {
-    0%   { opacity: 0; transform: translate(-50%, -50%) translate(0, 0) scale(0.3); }
-    30%  { opacity: 1; }
-    100% { opacity: 0; transform: translate(-50%, -50%) translate(550px, -280px) scale(1.2); }
+.sub{
+    margin-top: 20px;
+    font-size: 17px;
+    font-weight: 500;
 }
-
-/* 오른쪽 */
-@keyframes burst3 {
-    0%   { opacity: 0; transform: translate(-50%, -50%) translate(0, 0) scale(0.3); }
-    30%  { opacity: 1; }
-    100% { opacity: 0; transform: translate(-50%, -50%) translate(600px, 0px) scale(1.2); }
-}
-
-/* 오른쪽 아래 */
-@keyframes burst4 {
-    0%   { opacity: 0; transform: translate(-50%, -50%) translate(0, 0) scale(0.3); }
-    30%  { opacity: 1; }
-    100% { opacity: 0; transform: translate(-50%, -50%) translate(500px, 300px) scale(1.2); }
-}
-
-/* 아래쪽 */
-@keyframes burst5 {
-    0%   { opacity: 0; transform: translate(-50%, -50%) translate(0, 0) scale(0.3); }
-    30%  { opacity: 1; }
-    100% { opacity: 0; transform: translate(-50%, -50%) translate(0px, 340px) scale(1.2); }
-}
-
-/* 왼쪽 아래 */
-@keyframes burst6 {
-    0%   { opacity: 0; transform: translate(-50%, -50%) translate(0, 0) scale(0.3); }
-    30%  { opacity: 1; }
-    100% { opacity: 0; transform: translate(-50%, -50%) translate(-500px, 300px) scale(1.2); }
-}
-
-/* 왼쪽 */
-@keyframes burst7 {
-    0%   { opacity: 0; transform: translate(-50%, -50%) translate(0, 0) scale(0.3); }
-    30%  { opacity: 1; }
-    100% { opacity: 0; transform: translate(-50%, -50%) translate(-600px, 0px) scale(1.2); }
-}
-
-/* 왼쪽 위 */
-@keyframes burst8 {
-    0%   { opacity: 0; transform: translate(-50%, -50%) translate(0, 0) scale(0.3); }
-    30%  { opacity: 1; }
-    100% { opacity: 0; transform: translate(-50%, -50%) translate(-550px, -280px) scale(1.2); }
-}
-
-/* 정위쪽 (burst1보다 조금 다른 각도) */
-@keyframes burst9 {
-    0%   { opacity: 0; transform: translate(-50%, -50%) translate(0, 0) scale(0.3); }
-    30%  { opacity: 1; }
-    100% { opacity: 0; transform: translate(-50%, -50%) translate(200px, -320px) scale(1.2); }
-}
-
-/* 기본 상태 - 애니메이션 없음 */
-.asset1, .asset2, .asset3,
-.asset4, .asset5, .asset6,
-.asset7, .asset8, .asset9 { animation: none; }
-
-/* fire 클래스가 붙을 때만 애니메이션 실행 */
-.firework_wrap.fire .asset1 { animation: burst1 1.2s ease-out forwards; }
-.firework_wrap.fire .asset2 { animation: burst2 1.2s ease-out forwards; animation-delay: 0.05s; }
-.firework_wrap.fire .asset3 { animation: burst3 1.2s ease-out forwards; animation-delay: 0.08s; }
-.firework_wrap.fire .asset4 { animation: burst4 1.2s ease-out forwards; animation-delay: 0.05s; }
-.firework_wrap.fire .asset5 { animation: burst5 1.2s ease-out forwards; animation-delay: 0.1s; }
-.firework_wrap.fire .asset6 { animation: burst6 1.2s ease-out forwards; animation-delay: 0.08s; }
-.firework_wrap.fire .asset7 { animation: burst7 1.2s ease-out forwards; animation-delay: 0.1s; }
-.firework_wrap.fire .asset8 { animation: burst8 1.2s ease-out forwards; animation-delay: 0.05s; }
-.firework_wrap.fire .asset9 { animation: burst9 1.2s ease-out forwards; animation-delay: 0.12s; }
-
-
-
-/* 불꽃놀이끝= */
 
 
 /* footer=========================== */
 #footer {
     position: relative;
     height: 390px;
-    margin-top: 100px;
+    margin-top: -100px;
     padding: 0;
     margin-bottom: 0;
     overflow: hidden;
