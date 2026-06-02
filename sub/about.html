@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1400">
+    <title>부사네</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- AOS CSS 추가 -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <!-- favicon 설정 -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/header+gnb/logo.png">
+    <!-- 슬라이더 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+
+    <!-- store 자체 css 연결하기 -->
+    <link rel="stylesheet" href="../css/about.css">
+</head>
+
+<body>
+    <!-- header -->
+    <div id="header_wrap">
+        <div class="header">
+            <a href="../index.html"><img class="logo" src="../img/header+gnb/logo.png" alt="logo"></a>
+            <ul class="icon">
+                <li><a href="#"><img src="../img/header+gnb/mypage.png" alt="img"></a></li>
+                <li><a href="#"><img src="../img/header+gnb/bag.png" alt="img"></a></li>
+                <li><a href="#"><img src="../img/header+gnb/search.png" alt="img"></a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- header_bottom 배경/gnb -->
+    <div class="header_bottom">
+        <div class="gnb_wrap">
+            <ul class="gnb">
+                <li class="about  active"><a href="./about.html"><img src="../img/header+gnb/about.png" alt="about"></a>
+                    <div class="bar"></div>
+                </li>
+                <li class="store"><a href="./store.html"><img src="../img/header+gnb/store.png" alt="store"></a>
+                    <div class="bar"></div>
+                </li>
+
+                <li class="with"><a href="./with.html"><img src="../img/header+gnb/with.png" alt="with"></a>
+                    <div class="bar"></div>
+                </li>
+
+                <li class="contact"><a href="#"><img src="../img/header+gnb/contact.png" alt="contact"></a>
+                    <div class="bar"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- main -->
+    <div class="main">
+        <p class="main_t" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="700">오늘의 부산을
+            <br> 선물합니다.
+        </p>
+        <p class="main_s" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="700">부사네를 소개합니다.</p>
+    </div>
+
+    <!-- text -->
+    <div id="text">
+        <div class="t_text" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+            <img class="b_1" src="../img/about/busane.png" alt="img">
+            <p>
+                부산의 골목길에는 매일 묵묵히 자신만의 자리를 지켜온 수많은 소상공인들이 있습니다. <br>
+                '무심코 지나쳤던 카페는 어떤 곳일까?', ‘언제나 따뜻한 불빛을 밝히던 그 식당은 어떻게 시작되었을까?' <br>
+                부사네는 호기심과 질문들을 모아 하나의 브랜드가 되었습니다. <br>
+                <br>
+                부사네는 단순히 상품을 중개하는 플랫폼이 아닙니다. <br>
+                부산 소상공인들의 숨은 이야기를 발굴하는 '스토리 아카이브'이자, 그들의 진심이 담긴 제품을 가장 가치 있게 소개하는 '로컬 큐레이터'입니다. <br>
+                우리는 생산자의 진정성과 소비자의 안목을 연결하여, 단순한 소비를 넘어 서로를 응원하는 건강한 로컬 생태계를 만들어가고자 합니다. <br>
+                소상공인과 소비자, 그리고 부사네가 함께 그려갈 부산 골목길의 내일. 그 가치 있는 여정에 여러분을 초대합니다.
+            </p>
+            <img class="s" src="../img/about/s.png" alt="s">
+        </div>
+        <div class="t_logo" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+            <div class="flex">
+                <img class="f_1" src="../img/about/flex_1.png" alt="flex">
+                <div class="logo_text">
+                    <p class="logo_tle">부사네 로고는...</p>
+                    <p>
+                        부산을 상징하는 여러 요소들로 로고를 만들었습니다. <br>
+                        산은 지붕으로, 바다는 바닥으로, 그리고 갈매기와 동백꽃이 집 안에 있는 형태입니다. <br>
+                        ‘부사네’라는 이름에 맞추어 집을 형상화하였습니다. <br>
+                        의미를 담은 집 모양을 서브 심볼로 함께 활용하고 있습니다.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 내용 작성 : 3개 / 성장/ 지도 -->
+    <div id="bg">
+        <div class="what" data-aos="fade-up" data-aos-duration="3000">
+            <h2>부사네가 하는 일</h2>
+            <div class="w_photo bg_tab1">
+                <div class="w_photo_inner"></div>
+                <!-- 아이콘 3개 -->
+                <div class="icon_wrap">
+                    <button class="tab_btn active" data-tab="tab1">
+                        <img src="../img/about/icon_1.png" alt="발굴">
+                    </button>
+                    <button class="tab_btn" data-tab="tab2">
+                        <img src="../img/about/icon_2.png" alt="협업">
+                    </button>
+                    <button class="tab_btn" data-tab="tab3">
+                        <img src="../img/about/icon_3.png" alt="소개">
+                    </button>
+                </div>
+                <!-- 콘텐츠 영역 -->
+                <div class="content_wrap">
+
+                    <!-- 탭 1 - 기본 화면 -->
+                    <div class="tab_content active" id="tab1">
+                        <img class="bg_circle" src="../img/about/bg_1.png" alt="">
+                        <div class="bubble_wrap">
+                            <img class="bubble1" src="../img/about/bubble_1.png" alt="발굴합니다">
+                            <!-- 말풍선 여러 개 추가 가능 -->
+                        </div>
+                        <p class="desc">부산에서 활동하고 있는 다양한 분야의 소상공인들을 발굴해나가고 있습니다.</p>
+                    </div>
+
+                    <!-- 탭 2 -->
+                    <div class="tab_content" id="tab2">
+                        <img class="bg_circle" src="../img/about/bg_2.png" alt="">
+                        <div class="bubble_wrap">
+                            <img class="bubble2" src="../img/about/bubble_2.png" alt="협업합니다">
+                        </div>
+                        <p class="desc">소상공인의 이야기와 제품을 온라인·오프라인으로 소비자에게 전합니다.</p>
+                    </div>
+
+                    <!-- 탭 3 -->
+                    <div class="tab_content" id="tab3">
+                        <img class="bg_circle" src="../img/about/bg_3.png" alt="">
+                        <div class="bubble_wrap">
+                            <img class="bubble3" src="../img/about/bubble_3.png" alt="소개합니다">
+                        </div>
+                        <p class="desc">소비자와 소상공인이 진심으로 만날 수 있도록 다리를 놓습니다.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="up" data-aos="fade-up" data-aos-duration="3000">
+            <h2>부산의 소상공인들과 함께 성장하고 있습니다.</h2>
+            <div class="up_1">
+                <p>브랜드 전체 보기</p>
+                <a href="./with.html"><img class="house" src="../img/header+gnb/house-hover.png" alt="house"></a>
+            </div>
+            <ul class="count">
+                <li><a href="#">
+                        <p class="count_t">부사네와 함께 협업하는 <br>부산의 소상공인들</p>
+                        <p class="count_num_big">
+                            <span class="count_num" data-target="55">0</span>명
+                        </p>
+                    </a></li>
+                <li><a href="#">
+                        <p class="count_t">
+                            지금까지 <br>누적 판매 제품 수</p>
+                        <p class="count_num_big">
+                            <span class="count_num" data-target="730">0</span>+
+                        </p>
+                    </a></li>
+                <li><a href="#">
+                        <p class="count_t">오프라인 행사 '모다모디' <br>신청 소상공인</p>
+                        <p class="count_num_big">
+                            <span class="count_num" data-target="108">0</span>명
+                        </p>
+                    </a></li>
+            </ul>
+        </div>
+        <!-- 지도 -->
+        <div class="map" data-aos="fade-up" data-aos-duration="3000">
+            <h2>부사네 입점 / 협업 소상공인들</h2>
+
+            <!-- 지도 이미지 감싸는 래퍼 추가 -->
+            <div class="map_inner">
+                <img src="../img/about/map.png" alt="map">
+                <!-- 사하구 (왼쪽 카드) -->
+                <div class="pulse-dot left-card" style="left:22%;top:58%;">
+                    <div class="pulse-ring"></div>
+                    <div class="pulse-ring pulse-ring-2"></div>
+                    <div class="pulse-ring pulse-ring-3"></div>
+                    <div class="dot-core"></div>
+                    <div class="tooltip">사하구</div>
+
+                    <!-- 사이드 카드 추가 -->
+                    <div class="side_card">
+                        <img src="../img/about/brand_saha.png" alt="사하구 브랜드">
+                        <div class="side_card_text">
+                            <p class="side_card_name">브랜드 이름</p>
+                            <p class="side_card_desc">브랜드에 대한 간단한 설명을 여기에 적어주세요.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 남포동 -->
+                <!-- 남포동 (왼쪽) -->
+                <div class="pulse-dot left-card" style="left:32%;top:62%;">
+                    <div class="pulse-ring"></div>
+                    <div class="pulse-ring pulse-ring-2"></div>
+                    <div class="pulse-ring pulse-ring-3"></div>
+                    <div class="dot-core"></div>
+                    <div class="tooltip">남포동</div>
+                    <div class="side_card">
+                        <img src="../img/about/동백서실.jpg" alt="남포동">
+                        <div class="side_card_text">
+                            <p class="side_card_name">동백서실</p>
+                            <p class="side_card_desc">남포동 골목길에 위치한 고즈넉한 찻집, 동백서실입니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 영도 (왼쪽) -->
+                <div class="pulse-dot left-card" style="left:36%;top:74%;">
+                    <div class="pulse-ring"></div>
+                    <div class="pulse-ring pulse-ring-2"></div>
+                    <div class="pulse-ring pulse-ring-3"></div>
+                    <div class="dot-core"></div>
+                    <div class="tooltip">영도</div>
+                    <div class="side_card">
+                        <img src="../img/about/계단.png" alt="영도">
+                        <div class="side_card_text">
+                            <p class="side_card_name">계단 위 식탁</p>
+                            <p class="side_card_desc">할머니의 손맛이 가득한 집밥 정식을 느껴보세요.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 서면 (왼쪽) -->
+                <div class="pulse-dot left-card" style="left:44%;top:50%;">
+                    <div class="pulse-ring"></div>
+                    <div class="pulse-ring pulse-ring-2"></div>
+                    <div class="pulse-ring pulse-ring-3"></div>
+                    <div class="dot-core"></div>
+                    <div class="tooltip">서면</div>
+                    <div class="side_card">
+                        <img src="../img/about/와히.jpg" alt="서면">
+                        <div class="side_card_text">
+                            <p class="side_card_name">와히(Wahi)</p>
+                            <p class="side_card_desc">따뜻한 시그니처 메뉴들로 유행을 선도하고 있는 카페입니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 전포동 (오른쪽) -->
+                <div class="pulse-dot right-card" style="left:50%;top:45%;">
+                    <div class="pulse-ring"></div>
+                    <div class="pulse-ring pulse-ring-2"></div>
+                    <div class="pulse-ring pulse-ring-3"></div>
+                    <div class="dot-core"></div>
+                    <div class="tooltip">전포동</div>
+                    <div class="side_card">
+                        <img src="../img/about/brand_jeonpo.png" alt="전포동">
+                        <div class="side_card_text">
+                            <p class="side_card_name">전포동 브랜드</p>
+                            <p class="side_card_desc">브랜드 설명을 입력해주세요.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 광안리 (오른쪽) -->
+                <div class="pulse-dot right-card" style="left:60%;top:55%;">
+                    <div class="pulse-ring"></div>
+                    <div class="pulse-ring pulse-ring-2"></div>
+                    <div class="pulse-ring pulse-ring-3"></div>
+                    <div class="dot-core"></div>
+                    <div class="tooltip">광안리</div>
+                    <div class="side_card">
+                        <img src="../img/about/시오브리즈.jpg" alt="광안리">
+                        <div class="side_card_text">
+                            <p class="side_card_name">시오브리즈</p>
+                            <p class="side_card_desc">지나가기만 해도 빵 냄새가 솔솔 나는 따끈따끈한 빵집 시오브리즈입니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 해운대 (오른쪽) -->
+                <div class="pulse-dot right-card" style="left:70%;top:42%;">
+                    <div class="pulse-ring"></div>
+                    <div class="pulse-ring pulse-ring-2"></div>
+                    <div class="pulse-ring pulse-ring-3"></div>
+                    <div class="dot-core"></div>
+                    <div class="tooltip">해운대</div>
+                    <div class="side_card">
+                        <img src="../img/about/brand_haeundae.png" alt="해운대">
+                        <div class="side_card_text">
+                            <p class="side_card_name">해운대 브랜드</p>
+                            <p class="side_card_desc">브랜드 설명을 입력해주세요.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 기장 (오른쪽) -->
+                <div class="pulse-dot right-card" style="left:80%;top:25%;">
+                    <div class="pulse-ring"></div>
+                    <div class="pulse-ring pulse-ring-2"></div>
+                    <div class="pulse-ring pulse-ring-3"></div>
+                    <div class="dot-core"></div>
+                    <div class="tooltip">기장</div>
+                    <div class="side_card">
+                        <img src="../img/about/brand_gijang.png" alt="기장">
+                        <div class="side_card_text">
+                            <p class="side_card_name">기장 브랜드</p>
+                            <p class="side_card_desc">브랜드 설명을 입력해주세요.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+        <!-- footer -->
+    <div id="footer">
+        <div class="child_wrap">
+            <div class="floating-child">
+                <img src="../img/header+gnb/child.png" alt="child">
+            </div>
+            <div class="footer_text">
+                <ul class="footer_w">
+                    <li>
+                        <p>
+                            ♥ CS 고객사랑 서비스 본부 <br><br>
+                            이메일 : busane@gmail.com <br>
+                            채팅 상담 : <a class="kakaotalk" href="http://pf.kakao.com/_xlfCsX/chat" target="_blank">카카오톡
+                                채널톡</a> <br>
+                            상담 시간: 09:30 ~ 18:00 <br>(점심시간 12:00 ~ 13:00)
+                        </p>
+                    </li>
+                    <li class="f_logo">
+                        <img src="../img/header+gnb/logo.png" alt="footer_logo">
+                        <p>© 2026 Busane. All rights reserved.</p>
+                    </li>
+                    <li class="sns">
+                        <p class="sns_t">♥ 부사네 SNS</p>
+                        <ul class="snsi">
+                            <li> <a href="#"><img src="../img/header+gnb/sns_insta.png" alt="sns"></a></li>
+                            <li><a href="http://pf.kakao.com/_xlfCsX/chat" target="_blank"><img
+                                        src="../img/header+gnb/sns_ka.png" alt="sns"></a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+            <!-- 설정하기 -->
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
+            <!-- aos 불러오기 -->
+            <!-- 슬라이더 -->
+            <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+            <script>
+                const swiper = new Swiper('.mySwiper', {
+                    loop: true,              // 무한 반복
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,     // 점 클릭 가능
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',  // 다음 버튼
+                        prevEl: '.swiper-button-prev',  // 이전 버튼
+                    },
+                    autoplay: {
+                        delay: 4000,         // 3초마다 자동 넘김
+                        disableOnInteraction: false,
+                    },
+                });
+            </script>
+            <script src="../js/about.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1400">
+    <title>부사네</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- AOS CSS 추가 -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <!-- store 자체 css 연결하기 -->
+    <link rel="stylesheet" href="../css/with.css">
+    <!-- favicon 설정 -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/header+gnb/logo.png">
+    <!-- 슬라이더 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+</head>
+
+<body>
+
+    <!-- header -->
+    <div id="header_wrap">
+        <div class="header">
+            <a href="../index.html"><img class="logo" src="../img/header+gnb/logo.png" alt="logo"></a>
+            <ul class="icon">
+                <li><a href="#"><img src="../img/header+gnb/mypage.png" alt="img"></a></li>
+                <li><a href="#"><img src="../img/header+gnb/bag.png" alt="img"></a></li>
+                <li><a href="#"><img src="../img/header+gnb/search.png" alt="img"></a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- header_bottom 배경/gnb -->
+    <div class="header_bottom">
+        <div class="gnb_wrap">
+            <ul class="gnb">
+                <li class="about"><a href="./about.html"><img src="../img/header+gnb/about.png" alt="about"></a>
+                    <div class="bar"></div>
+                </li>
+                <li class="store"><a href="./store.html"><img src="../img/header+gnb/store.png" alt="store"></a>
+                    <div class="bar"></div>
+                </li>
+
+                <li class="with active"><a href="./with.html"><img src="../img/header+gnb/with.png" alt="with"></a>
+                    <div class="bar"></div>
+                </li>
+
+                <li class="contact"><a href="./contact.html"><img src="../img/header+gnb/contact.png" alt="contact"></a>
+                    <div class="bar"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <!-- main -->
+    <div class="main">
+        <p class="main_t" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="700">부산소상공인들과
+            <br> 부사네가 함께 합니다.
+        </p>
+        <p class="main_s" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="700">부사네 입점 브랜드들을 소개합니다.</p>
+    </div>
+
+    <!-- 스티키 만들기
+    <div class="st">
+        <img src="../img/sub/mail_box1.png" alt="img">
+    </div> -->
+
+    <!-- 브랜드 나열 -->
+    <div id="brand">
+        <div class="bubble">
+            <p class="in_b">카페, 음식 </p>
+        </div>
+        <ul class="brand_text" data-aos="fade-up" data-aos-duration="2000">
+            <li>
+                <div class="card">
+                    <!-- 앞면 -->
+                    <div class="card_front">
+                        <img src="../img/with/brand_1.png" alt="brand">
+                    </div>
+                    <!-- 뒷면 -->
+                    <div class="card_back">
+                        <p class="card_desc">
+                        <p class="name">시오브리즈</p> <br>
+                        바다의 향을 담은 베이커리! <br>
+                        남천동에 위치한 시오브리즈입니다. <br>
+                        대표 메뉴는 건강한 재료들이 가득한<br>
+                        건강빵과 가게 이름과 잘 어울리는 소금빵입니다.
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="card">
+                    <div class="card_front">
+                        <img src="../img/with/brand_2.png" alt="brand">
+                    </div>
+                    <div class="card_back">
+                        <p class="card_desc">
+                        <p class="name">계단 위 식탁</p> <br>
+                        산복도로에서 만나는
+                        할머니의 손맛!
+
+                        손녀와 할머니가 함께 운영하는 식당으로
+                        깔끔한 ‘매일 정식’과 달라지는 제철 음식들로
+                        구성된 ‘산복 정식’이 대표적인 메뉴입니다.
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="card">
+                    <!-- 앞면 -->
+                    <div class="card_front">
+                        <img src="../img/with/brand_3.png" alt="brand">
+                    </div>
+                    <!-- 뒷면 -->
+                    <div class="card_back">
+                        <p class="card_desc">
+                        <p class="name">와히 (Wahi)</p><br>
+                        하와이 말로 ‘연기’라는 의미를 가진 <br>
+                        와히는 공간을 채우는 따뜻한 연기와 온기를
+                        손님들에게 전합니다. <br><br>
+                        아이스커피가 당연해진 요즘,
+                        와히만의 따뜻한 시그니처 메뉴들은
+                        새로운 유행을 선도합니다.
+                        </p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <ul class="brand_text" data-aos="fade-up" data-aos-duration="2000">
+            <li>
+                <div class="card">
+                    <div class="card_front">
+                        <img src="../img/with/brand_4.png" alt="brand">
+                    </div>
+                    <div class="card_back">
+                        <p class="card_desc">
+                        <p class="name">동백서실</p><br>
+                        잠시 쉬어갈 공간이 필요하신가요? <br>
+                        남포동 골목길에 위치한 고즈넉한 찻집,
+                        동백서실로 초대합니다. <br><br>책 한 권, 동백서실의 시그니처 티세트 그리고 사장님의 멋진 선곡과 함께 고요한 휴식을 즐겨보세요.
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="card">
+                    <!-- 앞면 -->
+                    <div class="card_front">
+                        <img src="../img/with/brand_5.png" alt="brand">
+                    </div>
+                    <!-- 뒷면 -->
+                    <div class="card_back">
+                        <p class="card_desc">
+                        <p class="name">남항상회 (南港商會)</p><br>
+                        50년이 넘게 자갈치에서 건어물을
+                        판매 중인 이곳, 남향상회 <br><br>
+
+                        남향상회만의
+                        프리미엄 건어물 세트는
+                        외국 바이어 선물로도 큰 인기입니다.
+
+                        먹어보면 딱 다른!
+                        신세계를 느껴보세요. <br>
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="card">
+                    <div class="card_front">
+                        <img src="../img/with/brand_6.png" alt="brand">
+                    </div>
+                    <div class="card_back">
+                        <p class="card_desc">
+                        <p class="name">JP74</p><br>
+                        이름에서 알 수 있듯, 전포동에서 오래
+                        생활하신 사장님의 애정이 가득한 카페 <br><br>
+                        직접 로스팅하시기 때문에
+                        신선한 원두로 만든 커피들을 맛볼 수 있습니다.
+                        커피 클래스도 이루어지기 때문에 커피를
+                        사랑하신다면 꼭 방문 추천드립니다.
+                        </p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="bubble">
+            <p class="in_b">라이프 </p>
+        </div>
+        <ul class="brand_text" data-aos="fade-up" data-aos-duration="2000">
+            <li>
+                <div class="card">
+                    <!-- 앞면 -->
+                    <div class="card_front">
+                        <img src="../img/with/brand_7.png" alt="brand">
+                    </div>
+                    <!-- 뒷면 -->
+                    <div class="card_back">
+                        <p class="card_desc">
+                        <p class="name">오드 포트(Eau de Port)</p><br>
+                        부산에서 태어나 프랑스로 유학을 다녀온
+                        조향사님만의 느낌이 가득한 브랜드입니다. <br><br>
+                        감각적인 감성을 담은 대표 상품은 부산 곳곳의 지명과 향기를 담은 ‘Port-to-Port’
+                        향수 라인입니다. 부산을 표현한 특별한 향기를 느껴보세요.<br>
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="card">
+                    <div class="card_front">
+                        <img src="../img/with/brand_8.png" alt="brand">
+                    </div>
+                    <div class="card_back">
+                        <p class="card_desc">
+                        <p class="name">JP74</p><br>
+                        이름에서 알 수 있듯, 전포동에서 오래
+                        생활하신 사장님의 애정이 가득한 카페 <br><br>
+                        직접 로스팅하시기 때문에
+                        신선한 원두로 만든 커피들을 맛볼 수 있습니다.
+                        커피 클래스도 이루어지기 때문에 커피를
+                        사랑하신다면 꼭 방문 추천드립니다.
+                        </p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="bubble">
+            <p class="in_b">문구, 기록 </p>
+        </div>
+        <ul class="brand_text" data-aos="fade-up" data-aos-duration="2000">
+            <li>
+                <div class="card">
+                    <!-- 앞면 -->
+                    <div class="card_front">
+                        <img src="../img/with/brand_9.png" alt="brand">
+                    </div>
+                    <!-- 뒷면 -->
+                    <div class="card_back">
+                        <p class="card_desc">
+                        <p class="name">끼룩 (Kki-ruk)</p><br>
+                        ‘기록’과 갈매기의 울음소리가 합쳐진 유니크한 문구 편집샵 끼룩입니다. <br><br>
+                        세심하게 직접 제작한 다이어리부터
+                        부산 특색을 살린 특별한 부산 기념품들은 선물용으로도 큰 인기입니다.
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="card">
+                    <div class="card_front">
+                        <img src="../img/with/brand_12.png" alt="brand">
+                    </div>
+                    <div class="card_back">
+                        <p class="card_desc">
+                        <p class="name">윤슬인화소</p><br>
+                        윤슬처럼 반짝이는
+                        부산의 찰나들을 기록하는
+                        윤슬 인화소입니다.
+                        <br><br>
+                        입소문으로 예약하기가 어려워진 부산 스냅 사진부터 직접 부산의 모습을 담은 사진집과 엽서들까지!
+                        특별한 순간들을 윤슬인화소에서 만나보세요.
+                        </p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="bubble">
+            <p class="in_b">공방 </p>
+        </div>
+        <ul class="brand_text" data-aos="fade-up" data-aos-duration="2000">
+            <li>
+                <div class="card">
+                    <!-- 앞면 -->
+                    <div class="card_front">
+                        <img src="../img/with/brand_11.png" alt="brand">
+                    </div>
+                    <!-- 뒷면 -->
+                    <div class="card_back">
+                        <p class="card_desc">
+                        <p class="name">아틀리에 제로 (Atelier Zero)</p><br>
+                        ‘가죽과 원형을 연결하는 곳.' <br>
+                        느리지만 그래서 더 가치 있는 가죽공방 <br>
+                        아뜰리에 제로입니다.
+                        <br><br>
+                        가죽공예를 직접 체험해볼 수 있는
+                        클래스들부터
+                        오래 쓸 제품을 고민하신다면 직접 주문제작도 가능합니다.
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="card">
+                    <div class="card_front">
+                        <img src="../img/with/brand_10.png" alt="brand">
+                    </div>
+                    <div class="card_back">
+                        <p class="card_desc">
+                        <p class="name">물결빚음</p><br>
+                        낙동강의 유연한 흐름과 미학을 담은 <br>
+                        물결 빚음 입니다.
+                        <br><br>
+                        깔끔한 도자그릇 라인이 대표 제품이며,
+                        아이들과 함께 들을 수 있는 스토리 클래스 수업이 인기를 얻고 있습니다.
+
+                        함께 손으로 조금씩 만들어가는
+                        새로운 추억을 선물해보세요.
+                        </p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 표지판 -->
+    <div class="sign">
+        <h2>부사네는 부산 소상공인들과 함께 성장하고 싶습니다.</h2>
+        <p>소상공인 파트너십 관련 문의는 언제든 환영합니다.</p>
+        <a href="./contact.html"><img class="house" src="../img/header+gnb/house-hover.png" alt="house"></a>
+    </div>
+
+     <!-- footer -->
+    <div id="footer">
+        <div class="child_wrap">
+            <div class="floating-child">
+                <img src="../img/header+gnb/child.png" alt="child">
+            </div>
+            <div class="footer_text">
+                <ul class="footer_w">
+                    <li>
+                        <p>
+                            ♥ CS 고객사랑 서비스 본부 <br><br>
+                            이메일 : busane@gmail.com <br>
+                            채팅 상담 : <a class="kakaotalk" href="http://pf.kakao.com/_xlfCsX/chat" target="_blank">카카오톡
+                                채널톡</a> <br>
+                            상담 시간: 09:30 ~ 18:00 <br>(점심시간 12:00 ~ 13:00)
+                        </p>
+                    </li>
+                    <li class="f_logo">
+                        <img src="../img/header+gnb/logo.png" alt="footer_logo">
+                        <p>© 2026 Busane. All rights reserved.</p>
+                    </li>
+                    <li class="sns">
+                        <p class="sns_t">♥ 부사네 SNS</p>
+                        <ul class="snsi">
+                            <li> <a href="#"><img src="../img/header+gnb/sns_insta.png" alt="sns"></a></li>
+                            <li><a href="http://pf.kakao.com/_xlfCsX/chat" target="_blank"><img
+                                        src="../img/header+gnb/sns_ka.png" alt="sns"></a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- 설정하기 -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- aos 불러오기 -->
+    <!-- 슬라이더 -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.mySwiper', {
+            loop: true,              // 무한 반복
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,     // 점 클릭 가능
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',  // 다음 버튼
+                prevEl: '.swiper-button-prev',  // 이전 버튼
+            },
+            autoplay: {
+                delay: 4000,         // 3초마다 자동 넘김
+                disableOnInteraction: false,
+            },
+        });
+    </script>
+</body>
+
+</html>

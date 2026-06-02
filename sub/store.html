@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1400">
+    <title>부사네</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- AOS CSS 추가 -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <!-- store 자체 css 연결하기 -->
+    <link rel="stylesheet" href="../css/store.css">
+    <!-- favicon 설정 -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/header+gnb/logo.png">
+    <!-- 슬라이더 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+</head>
+
+<body>
+    <!-- header -->
+    <div id="header_wrap">
+        <div class="header">
+            <a href="../index.html"><img class="logo" src="../img/header+gnb/logo.png" alt="logo"></a>
+            <ul class="icon">
+                <li><a href="#"><img src="../img/header+gnb/mypage.png" alt="img"></a></li>
+                <li><a href="#"><img src="../img/header+gnb/bag.png" alt="img"></a></li>
+                <li><a href="#"><img src="../img/header+gnb/search.png" alt="img"></a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- header_bottom 배경/gnb -->
+    <div class="header_bottom">
+        <div class="gnb_wrap">
+            <ul class="gnb">
+                <li class="about"><a href="./about.html"><img src="../img/header+gnb/about.png" alt="about"></a>
+                    <div class="bar"></div>
+                </li>
+                <li class="store active"><a href="./store.html"><img src="../img/header+gnb/store.png" alt="store"></a>
+                    <div class="bar"></div>
+                </li>
+
+                <li class="with"><a href="./with.html"><img src="../img/header+gnb/with.png" alt="with"></a>
+                    <div class="bar"></div>
+                </li>
+
+                <li class="contact"><a href="./contact.html"><img src="../img/header+gnb/contact.png" alt="contact"></a>
+                    <div class="bar"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- main - 택배상자 -->
+    <div class="main">
+        <p class="main_t" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="700">부산 소상공인 제품들을
+            <br> 당신의 일상으로
+        </p>
+        <p class="main_s" data-aos="fade-down"
+        data-aos-easing="linear" data-aos-duration="700">부산 소상공인들의 다양한 제품들을 부사네에서 만나보세요</p>
+    </div>
+
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="../img/store/slide_4.jpg" alt="img"></div>
+            <div class="swiper-slide"><img src="../img/store/slide_2.jpg" alt="img"></div>
+            <div class="swiper-slide"><img src="../img/store/slide_3.png" alt="img"></div>
+            <div class="swiper-slide"><img src="../img/store/slide_1.jpg" alt="img"></div>
+
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- product 배열 -->
+
+    <div class="product1">
+        <ul class="product">
+            <!-- 첫 번째 : 모다모디 티켓 -->
+            <li><a href="#">
+                    <div class="img_box">
+                        <img src="../img/store/product_1.png" alt="product">
+                    </div>
+                    <div class="text_box">
+                        <div class="busane_small">
+                            <img class="small" src="../img/store/busane_small.png" alt="small">
+                            <p>모다모디 사전 티켓</p>
+                        </div>
+                    </div>
+                    <div class="price">
+                        <p><span>10,000원</span>9,000원</p>
+                    </div>
+                    <div class="hover_text">
+                        <p>부사네의 오프라인 팝업, 모다모디의 <br> 사전 티켓입니다. 현재 할인 중입니다. <br>
+                            스티커가 동봉되어 있습니다.</p>
+                    </div>
+                </a></li>
+
+            <!-- 두 번째  와히 드립백-->
+            <li><a href="#">
+                    <div class="img_box">
+                        <img src="../img/store/product_2.png" alt="product">
+                    </div>
+                    <div class="text_box">
+                        <p>와히 썸머 블렌드 드립백</p>
+                    </div>
+                    <div class="price">
+                        <p>12,000원</p>
+                    </div>
+                    <div class="hover_text">
+                        <p>와히의 한정 계절 드립백입니다. <br> 부사네가 온라인 독점 판매 중입니다.<br>
+                            상큼한 청포도 썸머를 느껴보세요.</p>
+                    </div>
+                </a></li>
+
+            <!-- 세 번째 시오브리즈 -->
+            <li><a href="#">
+                    <div class="img_box">
+                        <img src="../img/store/product_3.png" alt="product">
+                    </div>
+                    <div class="text_box">
+                        <p>시오브리즈 곡물빵</p>
+                    </div>
+                    <div class="price">
+                        <p>8,000원</p>
+                    </div>
+                    <div class="hover_text">
+                        <p>시오브리즈의 또 다른 인기제품 <br> 곡물빵입니다. 든든한 아침으로<br>
+                            꾸준히 인기있는 제품입니다.</p>
+                    </div>
+                </a></li>
+        </ul>
+        <ul class="product">
+            <!-- 네 번째 : 온휘 -->
+            <li><a href="#">
+                    <div class="img_box">
+                        <img src="../img/store/product_4.png" alt="product">
+                    </div>
+                    <div class="text_box">
+                        <p>온휘 바디로션</p>
+                    </div>
+                    <div class="price">
+                        <p>15,000원</p>
+                    </div>
+                    <div class="hover_text">
+                        <p>온휘의 대표적인 네이쳐 라인 중 가장 <br> 인기 있는 네이쳐로션입니다. <br>
+                            오래가는 보습감을 느껴보세요.</p>
+                    </div>
+                </a></li>
+
+            <!-- 다섯 번째  부사네 쇼핑백-->
+            <li><a href="#">
+                    <div class="img_box">
+                        <img src="../img/store/product_5.png" alt="product">
+                    </div>
+                    <div class="text_box">
+                        <div class="busane_small">
+                            <img class="small" src="../img/store/busane_small.png" alt="small">
+                            <p>부사네 쇼핑백</p>
+                        </div>
+                    </div>
+                    <div class="price">
+                        <p>3,000원</p>
+                    </div>
+                    <div class="hover_text">
+                        <p>부사네 쇼핑백입니다. <br> 선물 시에 함께 하기 좋게 튼튼하고<br>
+                            깔끔한 디자인입니다.</p>
+                    </div>
+
+                </a></li>
+
+            <!-- 여섯 번째 시오브리즈 -->
+            <li><a href="#">
+                    <div class="img_box">
+                        <img src="../img/store/product_6.png" alt="product">
+                    </div>
+                    <div class="text_box">
+                        <p>오드포트 Choryang Cold </p>
+                    </div>
+                    <div class="price">
+                        <p>35,000원</p>
+                    </div>
+                    <div class="hover_text">
+                        <p>오드포트의 새로운 향수, <br> 초량 콜드입니다. 차가운 바다바람을<br>
+                            담은 시그니처 제품입니다.</p>
+                    </div>
+                </a></li>
+        </ul>
+        <ul class="product">
+            <!-- 7. 부사네 기프트카드 -->
+            <li><a href="#">
+                    <div class="img_box">
+                        <img src="../img/store/product_7.png" alt="product">
+                    </div>
+                    <div class="text_box">
+                        <div class="busane_small">
+                            <img class="small" src="../img/store/busane_small.png" alt="small">
+                            <p>부사네 기프트카드</p>
+                        </div>
+                    </div>
+                    <div class="price">
+                        <p>15,000원</p>
+                    </div>
+                    <div class="hover_text">
+                        <p>부사네 협업 업체에서 사용 가능한<br>부사네 기프트카드입니다. <br>
+                            할인된 가격에 만나보세요.</p>
+                    </div>
+                </a></li>
+
+            <!-- 8. 물결 빚음 도자 그릇-->
+            <li><a href="#">
+                    <div class="img_box">
+                        <img src="../img/store/product_8.png" alt="product">
+                    </div>
+                    <div class="text_box">
+                        <p>물결 빚음 도자 그릇</p>
+                    </div>
+                    <div class="price">
+                        <p>17,000원</p>
+                    </div>
+                    <div class="hover_text">
+                        <p>깔끔하고 수려한 물결빚음의 대표 <br> 그릇입니다. 어느 용도에서도 사용<br>
+                            가능한 제품입니다.</p>
+                    </div>
+
+                </a></li>
+
+            <!-- 9. 윤슬인화소 부산의 순간- -->
+            <li><a href="#">
+                    <div class="img_box">
+                        <img src="../img/store/product_9.png" alt="product">
+                    </div>
+                    <div class="text_box">
+                        <p>윤슬 인화소 <부산의 순간->
+                        </p>
+                    </div>
+                    <div class="price">
+                        <p>20,000원</p>
+                    </div>
+                    <div class="hover_text">
+                        <p>잊지 못하는 순간이 있으신가요? <br> 윤슬 인화소에서 감정과 공간이 만나는 <br>
+                            부산 곳곳을 담은 포토북입니다.</p>
+                    </div>
+                </a></li>
+        </ul>
+
+    </div>
+
+
+     <!-- footer -->
+    <div id="footer">
+        <div class="child_wrap">
+            <div class="floating-child">
+                <img src="../img/header+gnb/child.png" alt="child">
+            </div>
+            <div class="footer_text">
+                <ul class="footer_w">
+                    <li>
+                        <p>
+                            ♥ CS 고객사랑 서비스 본부 <br><br>
+                            이메일 : busane@gmail.com <br>
+                            채팅 상담 : <a class="kakaotalk" href="http://pf.kakao.com/_xlfCsX/chat" target="_blank">카카오톡
+                                채널톡</a> <br>
+                            상담 시간: 09:30 ~ 18:00 <br>(점심시간 12:00 ~ 13:00)
+                        </p>
+                    </li>
+                    <li class="f_logo">
+                        <img src="../img/header+gnb/logo.png" alt="footer_logo">
+                        <p>© 2026 Busane. All rights reserved.</p>
+                    </li>
+                    <li class="sns">
+                        <p class="sns_t">♥ 부사네 SNS</p>
+                        <ul class="snsi">
+                            <li> <a href="#"><img src="../img/header+gnb/sns_insta.png" alt="sns"></a></li>
+                            <li><a href="http://pf.kakao.com/_xlfCsX/chat" target="_blank"><img
+                                        src="../img/header+gnb/sns_ka.png" alt="sns"></a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+        <!-- 설정하기 -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <!-- aos 불러오기 -->
+        <!-- 슬라이더 -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+        <script>
+            const swiper = new Swiper('.mySwiper', {
+                loop: true,              // 무한 반복
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,     // 점 클릭 가능
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',  // 다음 버튼
+                    prevEl: '.swiper-button-prev',  // 이전 버튼
+                },
+                autoplay: {
+                    delay: 4000,         // 3초마다 자동 넘김
+                    disableOnInteraction: false,
+                },
+            });
+        </script>
+</body>
+
+</html>
