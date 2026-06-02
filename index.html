@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1400">
+    <title>부사네</title>
+        <!-- favicon 설정 -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/header+gnb/logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fff;
+            overflow: hidden;
+        }
+
+        /* 마우스 설정하기 */
+        /* 전체 요소를 선택하여 강제로 커서 고정 */
+        * {
+            cursor: url('../img/sub/mouse.png') 10 10, auto !important;
+        }
+
+        /* ── 로딩 화면 ── */
+        #loading {
+            position: fixed;
+            inset: 0;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            z-index: 100;
+            transition: opacity 0.8s ease;
+        }
+
+        .loading-icons {
+            display: flex;
+            gap: 32px;
+            align-items: flex-end;
+        }
+
+        /* 아이콘 4개 - 처음엔 숨김 */
+        .load-icon {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .load-icon.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .loading-text {
+            font-size: 14px;
+            color: #aaa;
+            letter-spacing: 2px;
+            font-family: sans-serif;
+        }
+
+        /* 로딩 바 */
+        .loading-bar-wrap {
+            width: 200px;
+            height: 3px;
+            background: #eee;
+            border-radius: 99px;
+            overflow: hidden;
+        }
+
+        .loading-bar {
+            height: 100%;
+            width: 0%;
+            background: #3D5A47;
+            border-radius: 99px;
+            transition: width 0.3s ease;
+        }
+
+        /* ── 메인 동영상 섹션 ── */
+        #intro {
+            display: none;
+            /* 처음엔 숨김 */
+            position: fixed;
+            inset: 0;
+            background: #ffffff;
+            z-index: 50;
+        }
+
+        .scene {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+
+        .scene.active {
+            opacity: 1;
+        }
+
+        .scene video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .scene img {
+            max-width: 500px;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+
+        /* 스크롤 가이드 */
+        .scroll-guide {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            font-family: sans-serif;
+            letter-spacing: 1px;
+            animation: bounce 1.5s ease-in-out infinite;
+            z-index: 10;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            50% {
+                transform: translateX(-50%) translateY(8px);
+            }
+        }
+
+        /* 진행 점 */
+        .progress-dots {
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: background 0.3s ease;
+        }
+
+        .dot.active {
+            background: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 로딩 화면 -->
+    <div id="loading">
+        <div class="loading-icons">
+            <img class="load-icon" id="icon1" src="./img/sub/산.png" alt="산">
+            <img class="load-icon" id="icon2" src="./img/sub/바다.png" alt="바다">
+            <img class="load-icon" id="icon3" src="./img/sub/갈매기.png" alt="갈매기">
+            <img class="load-icon" id="icon4" src="./img/sub/동백.png" alt="동백">
+        </div>
+        <div class="loading-bar-wrap">
+            <div class="loading-bar" id="loadingBar"></div>
+        </div>
+        <div class="loading-text">Loading...</div>
+    </div>
+
+    <!-- 메인 동영상 섹션 -->
+    <div id="intro">
+
+        <!-- 산 동영상 -->
+        <div class="scene active" id="scene1">
+            <video autoplay loop muted playsinline preload="auto">
+                <source src="./img/main/Mount.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- 산 이미지 -->
+        <div class="scene" id="scene2">
+            <img src="./img/main/산.png" alt="산">
+        </div>
+
+        <!-- 바다 동영상 -->
+        <div class="scene" id="scene3">
+            <video autoplay loop muted playsinline preload="auto">
+                <source src="./img/main/sea.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- 바다 이미지 -->
+        <div class="scene" id="scene4">
+            <img src="./img/main/바다.png" alt="바다">
+        </div>
+
+        <!-- 동백 동영상 -->
+        <div class="scene" id="scene5">
+            <video autoplay loop muted playsinline preload="auto">
+                <source src="./img/main/Camellia.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- 동백 이미지 -->
+        <div class="scene" id="scene6">
+            <img src="./img/main/갈매기.png" alt="갈매기">
+        </div>
+
+
+        <!-- 갈매기 동영상 -->
+        <div class="scene" id="scene7">
+            <video autoplay loop muted playsinline preload="auto">
+                <source src="./img/main/Seagull.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- 설명 동영상 (편집필요) -->
+
+        <div class="scene" id="scene8">
+            <video autoplay loop muted playsinline preload="auto">
+                <source src="./img/main/final.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- 최종로고 이미지 -->
+
+        <div class="scene" id="scene9">
+            <img src="./img/main/최종.png" alt="최종로고">
+        </div>
+
+        <div class="scroll-guide" id="scrollGuide">scroll ↓</div>
+
+        <div class="progress-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+
+            // ── 로딩 화면 ──
+            const icons = ['icon1', 'icon2', 'icon3', 'icon4'];
+            const bar = document.getElementById('loadingBar');
+            let loadProgress = 0;
+
+            // 아이콘 순차 등장
+            icons.forEach((id, i) => {
+                setTimeout(() => {
+                    document.getElementById(id).classList.add('show');
+                    loadProgress = (i + 1) * 25;
+                    bar.style.width = loadProgress + '%';
+                }, i * 400); // 0.4초 간격
+            });
+
+            // 동영상 미리 로딩 체크
+            const videos = document.querySelectorAll('#intro video');
+            let loaded = 0;
+
+            function checkAllLoaded() {
+                loaded++;
+                bar.style.width = Math.max(loadProgress, (loaded / videos.length) * 100) + '%';
+            }
+
+            videos.forEach(v => {
+                if (v.readyState >= 3) {
+                    checkAllLoaded();
+                } else {
+                    v.addEventListener('canplaythrough', checkAllLoaded, { once: true });
+                }
+            });
+
+            // 최소 2초 로딩 후 인트로 시작
+            setTimeout(() => {
+                startIntro();
+            }, icons.length * 400 + 600); // 아이콘 다 나온 후 0.6초 뒤
+
+
+            // ── 로딩 → 인트로 전환 ──
+            function startIntro() {
+                const loading = document.getElementById('loading');
+                const intro = document.getElementById('intro');
+
+                // 로딩 화면 페이드아웃
+                loading.style.opacity = '0';
+                setTimeout(() => {
+                    loading.style.display = 'none';
+                    // 인트로 표시
+                    intro.style.display = 'block';
+                    goToScene(1);
+                }, 800);
+            }
+
+
+            // ── 메인 동영상 장면 전환 ──
+            const totalScenes = 9;
+            let currentScene = 1;
+            let isAnimating = false;
+            let isLocked = true;
+
+            function goToScene(n) {
+                if (isAnimating) return;
+                if (n < 1 || n > totalScenes) return;
+
+                isAnimating = true;
+
+                // 이전 장면 숨기기
+                const prev = document.getElementById('scene' + currentScene);
+                if (prev) prev.classList.remove('active');
+
+                // 진행 점 업데이트
+                document.querySelectorAll('.dot').forEach((d, i) => {
+                    d.classList.toggle('active', i === n - 1);
+                });
+
+                currentScene = n;
+
+                // 새 장면 보이기
+                const next = document.getElementById('scene' + currentScene);
+                if (next) {
+                    next.classList.add('active');
+                    const video = next.querySelector('video');
+                    if (video) {
+                        video.currentTime = 0;
+                        video.play();
+                    }
+                }
+
+                // 다음 장면 미리 로드
+                const upcoming = document.getElementById('scene' + (n + 1));
+                if (upcoming) {
+                    const upVideo = upcoming.querySelector('video');
+                    if (upVideo) upVideo.load();
+                }
+
+                // 마지막 장면 → 메인으로 이동
+                if (currentScene === totalScenes) {
+                    const guide = document.getElementById('scrollGuide');
+                    if (guide) guide.textContent = '↓ 계속';
+
+                    setTimeout(() => {
+                        window.location.href = './main.html';
+                    }, 1500); // 1.5초 후 이동
+                }
+
+                setTimeout(() => { isAnimating = false; }, 900);
+            }
+
+            // 휠 이벤트
+            window.addEventListener('wheel', function (e) {
+                if (!isLocked) return;
+                e.preventDefault();
+                if (e.deltaY > 0) goToScene(currentScene + 1);
+                else goToScene(currentScene - 1);
+            }, { passive: false });
+
+            // 터치 이벤트
+            let touchStartY = 0;
+            window.addEventListener('touchstart', e => {
+                touchStartY = e.touches[0].clientY;
+            }, { passive: true });
+
+            window.addEventListener('touchend', e => {
+                if (!isLocked) return;
+                const diff = touchStartY - e.changedTouches[0].clientY;
+                if (Math.abs(diff) < 30) return;
+                if (diff > 0) goToScene(currentScene + 1);
+                else goToScene(currentScene - 1);
+            }, { passive: true });
+
+        })();
+    </script>
+
+</body>
+
+</html>
