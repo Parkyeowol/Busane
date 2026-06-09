@@ -31,7 +31,7 @@
         </div>
     </div>
     <!-- header_bottom 배경/gnb -->
-    <div class="header_bottom">
+    <div id="header_bottom">
         <div class="gnb_wrap">
             <ul class="gnb">
                 <li class="about"><a href="./about.html"><img src="../img/header+gnb/about.png" alt="about"></a>
@@ -52,6 +52,14 @@
         </div>
     </div>
 
+    <!-- 스티키 -->
+    <div class="ss">
+        <a href="./modamodi.html"><img class="moda" src="../img/sub/모다모디.png" alt=""></a>
+        <a href="http://pf.kakao.com/_xlfCsX/chat"><img class="kaka" src="../img/sub/톡상담.png" target="_blank"
+                alt=""></a>
+        <a href="#header_bottom"><img class="mailb" src="../img/sub/우체통.png" alt=""></a>
+    </div>
+
 
     <!-- main -->
     <div class="main">
@@ -65,7 +73,7 @@
     <!-- text -->
     <div id="text">
         <h2>어떤 문의인가요?</h2>
-        <ul class="text_box">
+        <ul data-aos="fade-down" data-aos-delay="0" data-aos-duration="800" class="text_box">
             <li><a href="#">
                     <img class="logo1" src="../img/contact/logo.png" alt="logo">
                     <div class="in_box">
@@ -83,30 +91,37 @@
         </ul>
         <!-- 아이콘 -->
         <h2>문의 방법</h2>
-        <ul class="icon_boxx">
-            <li data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="#">
+        <ul class="icon_boxx" data-aos="fade-down" data-aos-delay="0" data-aos-duration="800" >
+            <li>
+                <a href="#">
                     <img src="../img/contact/icon 1.png" alt="icon">
                     <h3>카카오톡 문의</h3>
                     <p>가장 빠른 답변 <br>평균 2시간 이내</p>
-                    <a href="javascript:return false;">
-                        <p class="block">채널 바로 가기</p>
-                    </a </a></li>
-            <li data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="#">
+                </a>
+                <a href="http://pf.kakao.com/_xlfCsX/chat" target="_blank">
+                    <p class="block">채널 바로 가기</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
                     <img src="../img/contact/icon 2.png" alt="icon">
                     <h3>이메일 문의</h3>
                     <p>busane@gmail.com<br>1-2일 이내 답변</p>
-                    <a href="javascript:return false;">
-                        <p class="block">메일 보내기</p>
-                    </a>
-                </a></li>
-            <li data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="#">
+                </a>
+                <a href="javascript:return false;">
+                    <p class="block">메일 보내기</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
                     <img src="../img/contact/icon 3.png" alt="icon">
                     <h3>입점 폼 다운</h3>
                     <p>작성 후 메일로 보내주시면 <br>더 빠르게 도와드리겠습니다.</p>
-                    <a href="javascript:return false;">
-                        <p class="block">다운로드</p>
-                    </a>
-                </a></li>
+                </a>
+                <a href="javascript:return false;">
+                    <p class="block">다운로드</p>
+                </a>
+            </li>
         </ul>
         <h2>자주 묻는 질문</h2>
     </div>
@@ -155,7 +170,7 @@
 
 
 
-     <!-- footer -->
+    <!-- footer -->
     <div id="footer">
         <div class="child_wrap">
             <div class="floating-child">
@@ -197,33 +212,33 @@
 
 
 
-        <!-- 설정하기 -->
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script>
-            AOS.init();
-        </script>
-        <!-- aos 불러오기 -->
-        <!-- 슬라이더 -->
-        <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-        <script>
-            const swiper = new Swiper('.mySwiper', {
-                loop: true,              // 무한 반복
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,     // 점 클릭 가능
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',  // 다음 버튼
-                    prevEl: '.swiper-button-prev',  // 이전 버튼
-                },
-                autoplay: {
-                    delay: 4000,         // 3초마다 자동 넘김
-                    disableOnInteraction: false,
-                },
-            });
-        </script>
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-        <script src="../js/contact.js"></script>
+    <!-- 설정하기 -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- aos 불러오기 -->
+    <!-- 슬라이더 -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.mySwiper', {
+            loop: true,              // 무한 반복
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,     // 점 클릭 가능
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',  // 다음 버튼
+                prevEl: '.swiper-button-prev',  // 이전 버튼
+            },
+            autoplay: {
+                delay: 4000,         // 3초마다 자동 넘김
+                disableOnInteraction: false,
+            },
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../js/contact.js"></script>
 </body>
 
 </html>

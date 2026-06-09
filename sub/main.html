@@ -25,7 +25,26 @@
     <!-- header -->
     <div id="header_wrap">
         <div class="header">
-            <a href="./index.html"><img class="logo" src="../img/header+gnb/logo.png" alt="logo"></a>
+            <div class="gnb_wrap">
+                <ul class="gnb">
+                    <li class="about"><a href="./about.html"><img src="../img/header+gnb/about.png" alt="about"></a>
+                        <div class="bar"></div>
+                    </li>
+                    <li class="store"><a href="./store.html"><img src="../img/header+gnb/store.png" alt="store"></a>
+                        <div class="bar"></div>
+                    </li>
+                    <li class="logo-wrap">
+                        <a href="../index.html"><img class="logo" src="../img/header+gnb/logo.png" alt="logo"></a>
+                    </li>
+                    <li class="with"><a href="./with.html"><img src="../img/header+gnb/with.png" alt="with"></a>
+                        <div class="bar"></div>
+                    </li>
+                    <li class="contact"><a href="#"><img src="../img/header+gnb/contact.png" alt="contact"></a>
+                        <div class="bar"></div>
+                    </li>
+                </ul>
+            </div>
+
             <ul class="icon">
                 <li><a href="#"><img src="../img/header+gnb/mypage.png" alt="img"></a></li>
                 <li><a href="#"><img src="../img/header+gnb/bag.png" alt="img"></a></li>
@@ -33,58 +52,222 @@
             </ul>
         </div>
     </div>
+
     <!-- header_bottom 배경/gnb -->
-    <div class="header_bottom">
-        <div class="gnb_wrap">
-            <ul class="gnb">
-                <li class="about"><a href="./about.html"><img src="../img/header+gnb/about.png" alt="about"></a>
-                    <div class="bar"></div>
-                </li>
-                <li class="store"><a href="./sub/store.html"><img src="../img/header+gnb/store.png" alt="store"></a>
-                    <div class="bar"></div>
-                </li>
 
-                <li class="with"><a href="./with.html"><img src="../img/header+gnb/with.png" alt="with"></a>
-                    <div class="bar"></div>
-                </li>
 
-                <li class="contact"><a href="./contact.html"><img src="../img/header+gnb/contact.png"
-                            alt="contact"></a>
-                    <div class="bar"></div>
-                </li>
-            </ul>
-        </div>
+    <!-- 스티키 -->
+    <div class="ss">
+        <a href="./modamodi.html"><img class="moda" src="../img/sub/모다모디.png" alt=""></a>
+        <a href="http://pf.kakao.com/_xlfCsX/chat"><img class="kaka" src="../img/sub/톡상담.png" target="_blank"
+                alt=""></a>
+        <a href="#main-hero"><img class="mailb" src="../img/sub/우체통.png" alt=""></a>
     </div>
 
 
-    <!-- main 배너-->
+    <!-- 메인====== -->
+    <div id="main-hero">
 
-    <!-- main -->
-    <div class="main">
-        <img class="s9" src="../img/header+gnb/main_bg.png" alt="bg">
-        <div class="text_main">
-            <p class="main_t" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="700">
-                부산소상공인들과
-                <br> 부사네가 함께 합니다.
-            </p>
-            <p class="main_s" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="700">부사네 입점 브랜드들을 소개합니다.
-            </p>
-        </div>
-        <div class="child_box">
-            <img class="b1" src="../img/header+gnb/b1.png"
-            alt="imgg">
-            <img class="b2" src="../img/header+gnb/b2.png" alt="img">
-            <img class="child1" src="../img/header+gnb/child1.png" alt="img">
-            <img class="child2" src="../img/header+gnb/child2.png" alt="img">
-            <img class="child3" src="../img/header+gnb/child3.png" alt="img">
+        <!-- 레이어1: 제품 + 동영상 두 줄 슬라이드 (맨 뒤) -->
+        <div class="hero-rows">
+
+            <!-- 윗줄 -->
+            <div class="hero-row hero-row-top">
+                <div class="hero-track hero-track-top">
+                    <div class="hero-item hero-prod">
+                        <!-- 모다모디 -->
+                        <img src="../img/store/product_1.png" alt="소상공인 제품">
+                    </div>
+                    <div class="hero-item hero-vclip">
+                        <video autoplay muted loop playsinline>
+                            <!-- 모노레일 -->
+                            <source src="../img/main_v/모노레일.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="hero-item hero-prod hero-prod-sm">
+                        <!-- 와히 -->
+                        <img src="../img/store/product_2.png" alt="소상공인 제품">
+                    </div>
+                    <div class="hero-item hero-prod hero-prod-md">
+                        <!-- 빵 -->
+                        <img src="../img/store/product_3.png" alt="소상공인 제품">
+                    </div>
+                    <div class="hero-item hero-vclip hero-vclip-lg">
+                        <!-- 마린시티 -->
+                        <video autoplay muted loop playsinline>
+                            <source src="../img/main_v/마린.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="hero-item hero-prod hero-prod-round">
+                        <!-- 카드지갑 -->
+                        <img src="../img/main_product/카드지갑.png" alt="소상공인 제품">
+                    </div>
+                    <div class="hero-item hero-prod hero-prod-tall">
+                        <!-- 쇼핑백 -->
+                        <img src="../img/store/product_5.png" alt="소상공인 제품">
+                    </div>
+                    <div class="hero-item hero-prod hero-prod-wide">
+                        <!-- 향수 -->
+                        <img src="../img/store/product_6.png" alt="소상공인 제품">
+                    </div>
+
+                    <!-- 무한 루프 복사본 -->
+                    <div class="hero-item hero-prod">
+                        <!-- 기프트카드 -->
+                        <img src="../img/store/product_7.png" alt="소상공인 제품">
+                    </div>
+                    <div class="hero-item hero-vclip">
+                        <video autoplay muted loop playsinline>
+                            <!-- 배모습  -->
+                            <source src="../img/main_v/배.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="hero-item hero-prod hero-prod-sm">
+                        <!-- 그릇 -->
+                        <img src="../img/store/product_8.png" alt="소상공인 제품">
+                    </div>
+                    <div class="hero-item hero-prod hero-prod-md">
+                        <!-- 포토북1 -->
+                        <img src="../img/store/product_9.png" alt="소상공인 제품">
+                    </div>
+                    <div class="hero-item hero-vclip hero-vclip-lg">
+                        <video autoplay muted loop playsinline>
+                            <!-- 전체 풍경 -->
+                            <source src="../img/main_v/전체풍경.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="hero-item hero-prod hero-prod-round">
+                        <!-- 로션 -->
+                        <img src="../img/store/product_4.png" alt="소상공인 제품">
+                    </div>
+                    <div class="hero-item hero-prod hero-prod-tall">
+                        <!-- 쇼핑백 -->
+                        <img src="../img/store/product_5.png" alt="소상공인 제품">
+                    </div>
+                    <div class="hero-item hero-prod hero-prod-wide">
+                        <!-- 향수 -->
+                        <img src="../img/store/product_6.png" alt="소상공인 제품">
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 아랫줄 -->
+            <div class="hero-row hero-row-bot">
+                <div class="hero-track hero-track-bot">
+                    <div class="hero-item hero-prod hero-prod-wide">
+                        <!-- 쿠키 -->
+                        <img src="../img/main_product/쿠키1.png" alt="소상공인 제품">
+                    </div>
+                    <div class="hero-item hero-vclip hero-vclip-md">
+                        <!-- 거리동영상 -->
+                        <video autoplay muted loop playsinline>
+                            <source src="../img/main_v/거리.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="hero-item hero-prod hero-prod-md">
+                        <!-- 포토북2 -->
+                        <img src="../img/store/product_9.png" alt="소상공인 제품">
+                    </div>
+                    <div class="hero-item hero-prod hero-prod-wide">
+                        <!-- 다이어리 -->
+                        <img src="../img/main_product/다이어리.png" alt="소상공인 제품">
+                    </div>
+                    <div class="hero-item hero-prod hero-prod-wide">
+                        <!-- 건어물 -->
+                        <img src="../img/main_product/건어물.png" alt="소상공인 제품">
+                    </div>
+                    <div class="hero-item hero-prod">
+                        <!-- 쿠키-->
+                        <img src="../img/main_product/쿠키1.png" alt="소상공인 제품">
+                    </div>
+                    <div class="hero-item hero-vclip">
+                        <video autoplay muted loop playsinline>
+                            <source src="../img/main_v/광안대교.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="hero-item hero-prod hero-prod-sm">
+                        <!-- 와히 -->
+                        <img src="../img/store/product_2.png" alt="소상공인 제품">
+                    </div>
+                    <div class="hero-item hero-prod hero-prod-round">
+                        <!-- 로션 -->
+                        <img src="../img/store/product_4.png" alt="소상공인 제품">
+                    </div>
+
+                    <!-- 무한 루프 복사본 -->
+                    <div class="hero-item hero-prod hero-prod-md">
+                        <!-- 빵 -->
+                        <img src="../img/store/product_3.png" alt="소상공인 제품">
+                    </div>
+                    <div class="hero-item hero-vclip hero-vclip-md">
+                        <video autoplay muted loop playsinline>
+                            <!-- 전체풍경 -->
+                            <source src="../img/main_v/전체풍경.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="hero-item hero-prod hero-prod-tall">
+                        <!-- 쇼핑백 -->
+                        <img src="../img/store/product_5.png" alt="소상공인 제품">
+                    </div>
+                    <div class="hero-item hero-prod hero-prod-wide">
+                        <!-- 향수 -->
+                        <img src="../img/store/product_6.png" alt="소상공인 제품">
+                    </div>
+                    <div class="hero-item hero-prod">
+                        <!-- 기프트카드 -->
+                        <img src="../img/store/product_7.png" alt="소상공인 제품">
+                    </div>
+                    <div class="hero-item hero-vclip">
+                        <video autoplay muted loop playsinline>
+                            <!-- 노을 -->
+                            <source src="../img/main_v/노을.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="hero-item hero-prod hero-prod-sm">
+                        <!-- 그릇 -->
+                        <img src="../img/store/product_8.png" alt="소상공인 제품">
+                    </div>
+                    <div class="hero-item hero-prod hero-prod-round">
+                        <!-- 포토북2 -->
+                        <img src="../img/store/product_9.png" alt="소상공인 제품">
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /hero-rows -->
+
+        <!-- 레이어2: 브랜드 텍스트 마키 -->
+        <div class="hero-brand-layer" aria-hidden="true">
+            <div class="hero-brand-track">
+                <span class="hero-brand-word k">부사네</span>
+                <span class="hero-brand-word">BUSANE</span>
+                <span class="hero-brand-word k">부사네</span>
+                <span class="hero-brand-word">BUSANE</span>
+                <span class="hero-brand-word k">부사네</span>
+                <span class="hero-brand-word">BUSANE</span>
+                <span class="hero-brand-word k">부사네</span>
+                <span class="hero-brand-word">BUSANE</span>
+                <span class="hero-brand-word k">부사네</span>
+                <span class="hero-brand-word">BUSANE</span>
+                <span class="hero-brand-word k">부사네</span>
+                <span class="hero-brand-word">BUSANE</span>
+                <span class="hero-brand-word k">부사네</span>
+                <span class="hero-brand-word">BUSANE</span>
+            </div>
         </div>
 
-    </div>
+        <!-- 일시정지/재생 버튼 -->
+        <button class="hero-ctrl" id="heroCtrl" onclick="heroTogglePause()">
+            <span id="heroCtrlIcon">⏸</span>
+        </button>
+
+    </div><!-- /main-hero -->
 
 
 
     <!-- 부사네 간단 설명 -->
-    <div class="talk">
+    <div class="talk" data-aos="fade-up" data-aos-duration="3000" data-aos-anchor-placement="top-bottom">
         <img class="house_talk" src="../img/header+gnb/house_talk.png" alt="house">
         <div class="busane_talk_wrap">
             <div class="busane_talk" data-aos="fade-up" data-aos-duration="1000">
@@ -105,7 +288,7 @@
     <!-- 구름 배경 (best4/후기/부사네x소상공인) -->
     <div class="cloud">
         <img class="cloud-bg" src="../img/header+gnb/Group 26.png" alt="img">
-        <div data-aos="zoom-in">
+        <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
             <h1>BEST4</h1>
         </div>
         <div class="best" data-aos="fade-up" data-aos-duration="1000">
@@ -262,8 +445,7 @@
             <div class="coll_1">
                 <img src="../img/header+gnb/소상공인_1.png" alt="소상공인">
                 <a href="#"><img class="house2" src="../img/header+gnb/house-hover.png" alt="house"></a>
-                <div data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500"
-                    data-aos-duration="3000">
+                <div data-aos="fade-left" data-aos-duration="3000">
                     <h2>오늘부산 - 카페지도</h2>
                     <p>"이번 부산 여행, 카페는 어디 가지?" <br>
                         오늘부산 카페지도는 부사네가 직접 발로 뛰며 엄선한 부산 카페만 담은 큐레이션 지도입니다. <br>
@@ -275,8 +457,7 @@
             <div class="coll_1">
 
                 <a href="#"><img class="house3" src="../img/header+gnb/house-hover.png" alt="house"></a>
-                <div data-aos="fade-right" data-aos-anchor="#example-anchor" data-aos-offset="500"
-                    data-aos-duration="3000">
+                <div data-aos="fade-right" data-aos-duration="3000">
                     <h2>열두달의 부산 2026</h2>
                     <p>"12달, 12명의 부산 작가, 12개의 부산 풍경.<br>
                         열두달의 부산 2026은 부산에서 활동하는 작가들과 함께 만든 협업 다이어리입니다. <br>
@@ -290,11 +471,13 @@
     </div>
     <!-- 부사네에 대한 모든 것! -->
     <div class="all">
-        <img data-aos="zoom-in" src="../img/header+gnb/about_busane.png" alt="about">
-        <p class="thank">문의는 부사네 카카오톡 채널에서 빠르게 답변 도와드리겠습니다. 감사합니다.</p>
+        <img data-aos="zoom-in data-aos-duration=" 3000" data-aos-anchor-placement="top-bottom"
+            src="../img/header+gnb/about_busane.png" alt="about">
+        <p class="thank">문의는 <a class="kakaotalk_hover" href="http://pf.kakao.com/_xlfCsX/chat">부사네 카카오톡 채널</a>에서 빠르게 답변
+            도와드리겠습니다. 감사합니다.</p>
 
         <ul class="all_1">
-            <li class="all_text1">
+            <li class="all_text1" data-aos="fade-down" data-aos-delay="200" data-aos-duration="800">
                 <a class="yes1" href="#"><img src="../img/header+gnb/all_img_1.png" alt="all">
                     <div class="yes">
                         <p>
@@ -308,7 +491,8 @@
                     </div>
                 </a>
             </li>
-            <li class="all_text2"><a class="yes1" href="#"><img src="../img/header+gnb/all_img_2.png" alt="all">
+            <li class="all_text2" data-aos="fade-down" data-aos-delay="400" data-aos-duration="800"><a class="yes1"
+                    href="#"><img src="../img/header+gnb/all_img_2.png" alt="all">
                     <div class="yes">
                         <p>
                             선발 기준은 간단합니다.
@@ -322,7 +506,8 @@
                 </a></li>
         </ul>
         <ul class="all_1">
-            <li class="all_text3"><a class="yes1" href="#"><img src="../img/header+gnb/all_img_3.png" alt="img">
+            <li class="all_text3" data-aos="fade-down" data-aos-delay="600" data-aos-duration="800"><a class="yes1"
+                    href="#"><img src="../img/header+gnb/all_img_3.png" alt="img">
                     <div class="yes">
                         <p>
                             아쉽게도 부산 지역 소상공인만 입점 가능합니다.
@@ -334,7 +519,8 @@
                         </p>
                     </div>
                 </a></li>
-            <li class="all_text4"><a class="yes1" href="#"><img src="../img/header+gnb/all_img_4.png" alt="img">
+            <li class="all_text4" data-aos="fade-down" data-aos-delay="800" data-aos-duration="800"><a class="yes1"
+                    href="#"><img src="../img/header+gnb/all_img_4.png" alt="img">
                     <div class="yes">
                         <p>
                             부사네에 많은 관심 감사합니다.
@@ -352,11 +538,16 @@
     <div class="modamodi">
         <div class="box">
             <div class="mo_box">
-                <img class="modamodi1" data-aos="fade-down" src="../img/header+gnb/모다모디_1.png" alt="모다모디">
-                <img class="modamodi2" data-aos="fade-down" src="../img/header+gnb/모다모디_2.png" alt="모다모디">
-                <img class="modamodi3" data-aos="fade-down" src="../img/header+gnb/모다모디_3.png" alt="모다모디">
-                <img class="modamodi4" data-aos="fade-down" src="../img/header+gnb/모다모디_4.png" alt="모다모디">
-                <img class="modamodi5" data-aos="fade-down" src="../img/header+gnb/모다모디_5.png" alt="모다모디">
+                <div class="mo_item"><img class="modamodi1" data-aos="fade-down data-aos-anchor-placement=" top-bottom""
+                        src="../img/header+gnb/모다모디_1.png" alt="모다모디"></div>
+                <div class="mo_item"><img class="modamodi2" data-aos="fade-down" src="../img/header+gnb/모다모디_2.png"
+                        alt="모다모디"></div>
+                <div class="mo_item"><img class="modamodi3" data-aos="fade-down" src="../img/header+gnb/모다모디_3.png"
+                        alt="모다모디"></div>
+                <div class="mo_item"><img class="modamodi4" data-aos="fade-down" src="../img/header+gnb/모다모디_4.png"
+                        alt="모다모디"></div>
+                <div class="mo_item"><img class="modamodi5" data-aos="fade-down" src="../img/header+gnb/모다모디_5.png"
+                        alt="모다모디"></div>
             </div>
             <div class="m_text" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                 <img class="m_logo" src="../img/header+gnb/모다모디로고.png" alt="모다모디">
@@ -427,8 +618,85 @@
     <script>
         AOS.init();
     </script>
-    <!-- aos 불러오기 -->
-    <script src="./js/script.js"></script>
+    <!-- ========================================
+
+======================================== -->
+
+    <script>
+        // ── 동백꽃 효과 ──
+        (function () {
+            const hero = document.getElementById('main-hero');
+            if (!hero) return;
+
+            hero.addEventListener('mousemove', function (e) {
+                const now = Date.now();
+                if (now - (hero._lastPetal || 0) < 150) return;
+                hero._lastPetal = now;
+
+                // 매 이벤트마다 hero의 현재 위치를 새로 계산
+                const rect = hero.getBoundingClientRect();
+
+                // hero 영역 안에 마우스가 있을 때만 실행
+                if (
+                    e.clientX < rect.left ||
+                    e.clientX > rect.right ||
+                    e.clientY < rect.top ||
+                    e.clientY > rect.bottom
+                ) return;
+
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const spreadX = (Math.random() - 0.5) * 10;
+                const startX = Math.max(10, Math.min(x + spreadX, hero.offsetWidth - 10));
+                const startY = Math.max(0, Math.min(y - 10, hero.offsetHeight - 80));
+
+                const petal = document.createElement('img');
+                petal.src = '../img/sub/동백.png';
+                petal.style.cssText = `
+                position: absolute;
+                width: ${40 + Math.random() * 10}px;
+                left: ${startX}px;
+                top: ${startY}px;
+                opacity: 0.85;
+                pointer-events: none;
+                z-index: 5;
+                animation: petalFall ${1.2 + Math.random() * 0.8}s ease-in forwards;
+            `;
+                hero.appendChild(petal);
+                petal.addEventListener('animationend', () => petal.remove());
+            });
+        })();
+
+        // ── 헤더 바텀 + ss 스크롤 제어 ──
+
+        const ss = document.querySelector('.ss');
+
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 100) {
+                ss.classList.add('visible');
+            } else {
+                ss.classList.remove('visible');
+            }
+        });
+
+
+        // ── 일시정지 토글 ──
+        (function () {
+            let heroPaused = false;
+            const heroTracks = document.querySelectorAll(
+                '.hero-brand-track, .hero-track-top, .hero-track-bot'
+            );
+            window.heroTogglePause = function () {
+                heroPaused = !heroPaused;
+                heroTracks.forEach(function (t) {
+                    t.style.animationPlayState = heroPaused ? 'paused' : 'running';
+                });
+                document.getElementById('heroCtrlIcon').textContent = heroPaused ? '▶' : '⏸';
+            };
+        })();
+    </script>
+
 </body>
 
 </html>

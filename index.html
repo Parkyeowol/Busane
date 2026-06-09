@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1400">
     <title>부사네</title>
-        <!-- favicon 설정 -->
+    <!-- favicon 설정 -->
     <link rel="icon" type="image/png" sizes="32x32" href="./img/header+gnb/logo.png">
     <style>
         * {
@@ -23,6 +23,11 @@
         /* 전체 요소를 선택하여 강제로 커서 고정 */
         * {
             cursor: url('./img/sub/mouse.png') 10 10, auto !important;
+        }
+
+        .scroll-guide {
+            /* 기존 속성 유지하고 아래만 추가 */
+            transition: color 0.4s ease;
         }
 
         /* ── 로딩 화면 ── */
@@ -235,19 +240,13 @@
             </video>
         </div>
 
-        <!-- 설명 동영상 (편집필요) -->
-
-        <div class="scene" id="scene8">
-            <video autoplay loop muted playsinline preload="auto">
-                <source src="./img/main/final.mp4" type="video/mp4">
-            </video>
-        </div>
-
         <!-- 최종로고 이미지 -->
 
-        <div class="scene" id="scene9">
+        <div class="scene" id="scene8">
             <img src="./img/main/최종.png" alt="최종로고">
         </div>
+
+
 
         <div class="scroll-guide" id="scrollGuide">scroll ↓</div>
 
@@ -260,144 +259,132 @@
             <span class="dot"></span>
             <span class="dot"></span>
             <span class="dot"></span>
-            <span class="dot"></span>
         </div>
     </div>
 
     <script>
-        (function () {
+(function () {
+    const icons = ['icon1', 'icon2', 'icon3', 'icon4'];
+    const bar = document.getElementById('loadingBar');
+    let loadProgress = 0;
 
-            // ── 로딩 화면 ──
-            const icons = ['icon1', 'icon2', 'icon3', 'icon4'];
-            const bar = document.getElementById('loadingBar');
-            let loadProgress = 0;
+    icons.forEach((id, i) => {
+        setTimeout(() => {
+            document.getElementById(id).classList.add('show');
+            loadProgress = (i + 1) * 25;
+            bar.style.width = loadProgress + '%';
+        }, i * 400);
+    });
 
-            // 아이콘 순차 등장
-            icons.forEach((id, i) => {
-                setTimeout(() => {
-                    document.getElementById(id).classList.add('show');
-                    loadProgress = (i + 1) * 25;
-                    bar.style.width = loadProgress + '%';
-                }, i * 400); // 0.4초 간격
-            });
+    const videos = document.querySelectorAll('#intro video');
+    let loaded = 0;
 
-            // 동영상 미리 로딩 체크
-            const videos = document.querySelectorAll('#intro video');
-            let loaded = 0;
+    function checkAllLoaded() {
+        loaded++;
+        bar.style.width = Math.max(loadProgress, (loaded / videos.length) * 100) + '%';
+    }
 
-            function checkAllLoaded() {
-                loaded++;
-                bar.style.width = Math.max(loadProgress, (loaded / videos.length) * 100) + '%';
+    videos.forEach(v => {
+        if (v.readyState >= 3) {
+            checkAllLoaded();
+        } else {
+            v.addEventListener('canplaythrough', checkAllLoaded, { once: true });
+        }
+    });
+
+    setTimeout(() => {
+        startIntro();
+    }, icons.length * 400 + 600);
+
+    function startIntro() {
+        const loading = document.getElementById('loading');
+        const intro = document.getElementById('intro');
+        loading.style.opacity = '0';
+        setTimeout(() => {
+            loading.style.display = 'none';
+            intro.style.display = 'block';
+            goToScene(1);
+        }, 800);
+    }
+
+    const totalScenes = 8;
+    const whiteScenes = [2, 4, 6, 8];
+    let currentScene = 1;
+    let isAnimating = false;
+    let isLocked = true;
+
+    function goToScene(n) {
+        if (isAnimating) return;
+        if (n < 1 || n > totalScenes) return;
+
+        isAnimating = true;
+
+        const prev = document.getElementById('scene' + currentScene);
+        if (prev) prev.classList.remove('active');
+
+        document.querySelectorAll('.dot').forEach((d, i) => {
+            d.classList.toggle('active', i === n - 1);
+        });
+
+        currentScene = n;
+
+        const next = document.getElementById('scene' + currentScene);
+        if (next) {
+            next.classList.add('active');
+            const video = next.querySelector('video');
+            if (video) {
+                video.currentTime = 0;
+                video.play();
             }
+        }
 
-            videos.forEach(v => {
-                if (v.readyState >= 3) {
-                    checkAllLoaded();
-                } else {
-                    v.addEventListener('canplaythrough', checkAllLoaded, { once: true });
-                }
-            });
+        const upcoming = document.getElementById('scene' + (n + 1));
+        if (upcoming) {
+            const upVideo = upcoming.querySelector('video');
+            if (upVideo) upVideo.load();
+        }
 
-            // 최소 2초 로딩 후 인트로 시작
+        const guide = document.getElementById('scrollGuide');
+        if (guide) {
+            if (whiteScenes.includes(n)) {
+                guide.style.color = '#3D5A47';
+            } else {
+                guide.style.color = 'rgba(255,255,255,0.7)';
+            }
+        }
+
+        if (currentScene === totalScenes) {
+            if (guide) guide.textContent = '↓ 계속';
             setTimeout(() => {
-                startIntro();
-            }, icons.length * 400 + 600); // 아이콘 다 나온 후 0.6초 뒤
+                window.location.href = './sub/main.html';
+            }, 1500);
+        }
 
+        setTimeout(() => { isAnimating = false; }, 900);
+    }
 
-            // ── 로딩 → 인트로 전환 ──
-            function startIntro() {
-                const loading = document.getElementById('loading');
-                const intro = document.getElementById('intro');
+    window.addEventListener('wheel', function (e) {
+        if (!isLocked) return;
+        e.preventDefault();
+        if (e.deltaY > 0) goToScene(currentScene + 1);
+        else goToScene(currentScene - 1);
+    }, { passive: false });
 
-                // 로딩 화면 페이드아웃
-                loading.style.opacity = '0';
-                setTimeout(() => {
-                    loading.style.display = 'none';
-                    // 인트로 표시
-                    intro.style.display = 'block';
-                    goToScene(1);
-                }, 800);
-            }
+    let touchStartY = 0;
+    window.addEventListener('touchstart', e => {
+        touchStartY = e.touches[0].clientY;
+    }, { passive: true });
 
+    window.addEventListener('touchend', e => {
+        if (!isLocked) return;
+        const diff = touchStartY - e.changedTouches[0].clientY;
+        if (Math.abs(diff) < 30) return;
+        if (diff > 0) goToScene(currentScene + 1);
+        else goToScene(currentScene - 1);
+    }, { passive: true });
 
-            // ── 메인 동영상 장면 전환 ──
-            const totalScenes = 9;
-            let currentScene = 1;
-            let isAnimating = false;
-            let isLocked = true;
-
-            function goToScene(n) {
-                if (isAnimating) return;
-                if (n < 1 || n > totalScenes) return;
-
-                isAnimating = true;
-
-                // 이전 장면 숨기기
-                const prev = document.getElementById('scene' + currentScene);
-                if (prev) prev.classList.remove('active');
-
-                // 진행 점 업데이트
-                document.querySelectorAll('.dot').forEach((d, i) => {
-                    d.classList.toggle('active', i === n - 1);
-                });
-
-                currentScene = n;
-
-                // 새 장면 보이기
-                const next = document.getElementById('scene' + currentScene);
-                if (next) {
-                    next.classList.add('active');
-                    const video = next.querySelector('video');
-                    if (video) {
-                        video.currentTime = 0;
-                        video.play();
-                    }
-                }
-
-                // 다음 장면 미리 로드
-                const upcoming = document.getElementById('scene' + (n + 1));
-                if (upcoming) {
-                    const upVideo = upcoming.querySelector('video');
-                    if (upVideo) upVideo.load();
-                }
-
-                // 마지막 장면 → 메인으로 이동
-                if (currentScene === totalScenes) {
-                    const guide = document.getElementById('scrollGuide');
-                    if (guide) guide.textContent = '↓ 계속';
-
-                    setTimeout(() => {
-                        window.location.href = './sub/main.html';
-                    }, 1500); // 1.5초 후 이동
-                }
-
-                setTimeout(() => { isAnimating = false; }, 900);
-            }
-
-            // 휠 이벤트
-            window.addEventListener('wheel', function (e) {
-                if (!isLocked) return;
-                e.preventDefault();
-                if (e.deltaY > 0) goToScene(currentScene + 1);
-                else goToScene(currentScene - 1);
-            }, { passive: false });
-
-            // 터치 이벤트
-            let touchStartY = 0;
-            window.addEventListener('touchstart', e => {
-                touchStartY = e.touches[0].clientY;
-            }, { passive: true });
-
-            window.addEventListener('touchend', e => {
-                if (!isLocked) return;
-                const diff = touchStartY - e.changedTouches[0].clientY;
-                if (Math.abs(diff) < 30) return;
-                if (diff > 0) goToScene(currentScene + 1);
-                else goToScene(currentScene - 1);
-            }, { passive: true });
-
-        })();
-    </script>
+})();
+</script>
 
 </body>
 
