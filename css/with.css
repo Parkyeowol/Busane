@@ -210,11 +210,13 @@ html, body {
 }
 
 
+
 /* header_bottom - 배경 + gnb ---------*/
-.header_bottom {
+#header_bottom {
     background: url(../img/header+gnb/header_b.png) center no-repeat;
     background-size: 100% 100%;
     height: 250px;
+    overflow: hidden;
 }
 
 /* gnb */
@@ -229,6 +231,7 @@ html, body {
     padding-top: 180px;
     font-size: 15px;
     text-align: center;
+    overflow: hidden;
 }
 
 .gnb li a {
@@ -262,43 +265,80 @@ html, body {
 
 /* 공통 막대 설정 */
 .bar {
-    display: none; 
+    display: none;
     width: 70px;
     height: 5px;
-    margin-top: 5px; 
+    margin-top: 10px; 
     margin-left: 10px;
     background-color: transparent; /* 색상은 각 클래스에서 지정 */
 }
 .gnb li:hover .bar{
-    height: 12px;
+    height: 5px;
     display: block;      /* 호버했을 때도 보이도록 설정 */
     transition: transform 0.3s ease linear;
+}
+.gnb li.active:hover .bar {
+    padding-bottom: 6px;
 }
 
 /* active 클래스가 있을 때만 막대 표시 */
 .gnb li.active .bar {
     display: block;
+    margin-top: 5px;
 }
 
 /* 색상별 분기 처리 */
-.about .bar { background-color: #8acc7d; }
-.store .bar { background-color: #00bdff; }
-.with .bar  { background-color: #6d6e71; }
-.contact .bar { background-color: #ff487c; }
+.about .bar { background-color: #8acc7d; opacity: 40%; }
+.store .bar { background-color: #00bdff; opacity: 40%; }
+.with .bar  { background-color: #6d6e71; opacity: 40%; }
+.contact .bar { background-color: #ff487c; opacity: 40%;  }
+
+/* 스티키 */
+.ss {
+    width: 150px;
+    height: 400px;
+    position: fixed;
+    top: 75%;
+    right: 30px;
+    transform: translateY(-50%);
+    /* 세로 가운데 정렬 */
+    text-align: center;
+    z-index: 99;
+}
+
+.moda,
+.kaka {
+    width: 140px;
+    margin-bottom: -40px;
+    transition: transform 0.3s ease;
+}
+
+.moda:hover, .kaka:hover{
+    transform: translateY(-6px);
+}
+
+.mailb {
+    width: 140px;
+}
+
+.mailb:hover{
+    animation: tilting 1s ease-in-out infinite;
+}
+
 
 
 /* main  ============================*/
 .main{
     background: url(../img/with/main_bg.png) center no-repeat;
     background-size: 100% 100%;
-    height: 500px;
+    height: 600px;
     text-align: center;
 }
 .main_t{
     color: #fff;
     font-family: 'RomanticGumi';
     font-size: 55px;
-    padding-top: 150px;
+    padding-top: 180px;
     text-shadow: #4444446c 2px 2px 2px;
     line-height: 70px;
 }

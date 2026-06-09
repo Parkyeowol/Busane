@@ -231,10 +231,11 @@ html, body {
 
 
 /* header_bottom - 배경 + gnb ---------*/
-.header_bottom {
+#header_bottom {
     background: url(../img/header+gnb/header_b.png) center no-repeat;
     background-size: 100% 100%;
     height: 250px;
+    overflow: hidden;
 }
 
 /* gnb */
@@ -249,6 +250,7 @@ html, body {
     padding-top: 180px;
     font-size: 15px;
     text-align: center;
+    overflow: hidden;
 }
 
 .gnb li a {
@@ -285,26 +287,30 @@ html, body {
     display: none;
     width: 70px;
     height: 5px;
-    margin-top: 5px; 
+    margin-top: 10px; 
     margin-left: 10px;
     background-color: transparent; /* 색상은 각 클래스에서 지정 */
 }
 .gnb li:hover .bar{
-    height: 10px;
+    height: 5px;
     display: block;      /* 호버했을 때도 보이도록 설정 */
     transition: transform 0.3s ease linear;
+}
+.gnb li.active:hover .bar {
+    padding-bottom: 6px;
 }
 
 /* active 클래스가 있을 때만 막대 표시 */
 .gnb li.active .bar {
     display: block;
+    margin-top: 5px;
 }
 
 /* 색상별 분기 처리 */
-.about .bar { background-color: #8acc7d; }
-.store .bar { background-color: #00bdff; }
-.with .bar  { background-color: #6d6e71; }
-.contact .bar { background-color: #ff487c; }
+.about .bar { background-color: #8acc7d; opacity: 40%; }
+.store .bar { background-color: #00bdff; opacity: 40%; }
+.with .bar  { background-color: #6d6e71; opacity: 40%; }
+.contact .bar { background-color: #ff487c; opacity: 40%;  }
 
 
 
@@ -312,7 +318,7 @@ html, body {
 .main{
     background: url(../img/about/main_bg.png) center no-repeat;
     background-size: 100% 100%;
-    height: 500px;
+    height: 600px;
     text-align: center;
 }
 .main_t{
@@ -336,10 +342,42 @@ html, body {
     display: inline-block;
 }
 
+/* 스티키 */
+.ss {
+    width: 150px;
+    height: 400px;
+    position: fixed;
+    top: 75%;
+    right: 30px;
+    transform: translateY(-50%);
+    /* 세로 가운데 정렬 */
+    text-align: center;
+    z-index: 99;
+}
+
+.moda,
+.kaka {
+    width: 140px;
+    margin-bottom: -40px;
+    transition: transform 0.3s ease;
+}
+
+.moda:hover, .kaka:hover{
+    transform: translateY(-6px);
+}
+
+.mailb {
+    width: 140px;
+}
+
+.mailb:hover{
+    animation: tilting 1s ease-in-out infinite;
+}
+
 /* text============================ */
 #text{
-    height: 980px;
-    width: 1320px;
+    height: 1100px;
+    width: 1000px;
     margin: 0 auto;
 }
 .t_text{
@@ -375,6 +413,52 @@ html, body {
     margin-top: 50px;
     display: flex;
     justify-content: center;
+}
+.f_1{
+    width: 200px;
+}
+
+/* 로고 설명 부분 */
+.text_photo{
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.text_photo li{
+    width: 800px;
+}
+.text_photo img{
+    width: 200px;
+}
+
+/* 추가 */
+.text_photo li {
+    position: relative;
+    overflow: hidden;
+}
+
+.text_photo li img {
+    display: block;
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.text_photo li .hover_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.text_photo li:hover img:first-child {
+    opacity: 0;
+}
+
+.text_photo li:hover .hover_img {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* 내용작성 시작================= */
@@ -595,7 +679,7 @@ html, body {
 /* 펄스 점 공통 */
 .pulse-dot {
     position: absolute;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) !important;
     cursor: pointer;
     z-index: 10;
     opacity: 0;

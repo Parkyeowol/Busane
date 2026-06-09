@@ -114,7 +114,7 @@ body {
 /* 마우스 설정하기 */
 /* 전체 요소를 선택하여 강제로 커서 고정 */
 * {
-  cursor: url('../img/sub/mouse.png') 10 10, auto !important;
+    cursor: url('../img/sub/mouse.png') 10 10, auto !important;
 }
 
 /* header---------------------------- */
@@ -215,10 +215,11 @@ body {
 
 
 /* header_bottom - 배경 + gnb ---------*/
-.header_bottom {
+#header_bottom {
     background: url(../img/header+gnb/header_b.png) center no-repeat;
     background-size: 100% 100%;
     height: 250px;
+    overflow: hidden;
 }
 
 /* gnb */
@@ -233,6 +234,7 @@ body {
     padding-top: 180px;
     font-size: 15px;
     text-align: center;
+    overflow: hidden;
 }
 
 .gnb li a {
@@ -266,36 +268,73 @@ body {
 
 /* 공통 막대 설정 */
 .bar {
-    display: none; 
+    display: none;
     width: 70px;
     height: 5px;
-    margin-top: 5px; 
+    margin-top: 10px; 
     margin-left: 10px;
     background-color: transparent; /* 색상은 각 클래스에서 지정 */
 }
 .gnb li:hover .bar{
-    height: 11px;
+    height: 5px;
     display: block;      /* 호버했을 때도 보이도록 설정 */
     transition: transform 0.3s ease linear;
+}
+.gnb li.active:hover .bar {
+    padding-bottom: 6px;
 }
 
 /* active 클래스가 있을 때만 막대 표시 */
 .gnb li.active .bar {
     display: block;
+    margin-top: 5px;
 }
 
 /* 색상별 분기 처리 */
-.about .bar { background-color: #8acc7d; }
-.store .bar { background-color: #00bdff; }
-.with .bar  { background-color: #6d6e71; }
-.contact .bar { background-color: #ff487c; }
+.about .bar { background-color: #8acc7d; opacity: 40%; }
+.store .bar { background-color: #00bdff; opacity: 40%; }
+.with .bar  { background-color: #6d6e71; opacity: 40%; }
+.contact .bar { background-color: #ff487c; opacity: 40%;  }
+
+/* 스티키 */
+.ss {
+    width: 150px;
+    height: 400px;
+    position: fixed;
+    top: 75%;
+    right: 30px;
+    transform: translateY(-50%);
+    /* 세로 가운데 정렬 */
+    text-align: center;
+    z-index: 99;
+}
+
+.moda,
+.kaka {
+    width: 140px;
+    margin-bottom: -40px;
+    transition: transform 0.3s ease;
+}
+
+.moda:hover, .kaka:hover{
+    transform: translateY(-6px);
+}
+
+.mailb {
+    width: 140px;
+}
+
+.mailb:hover{
+    animation: tilting 1s ease-in-out infinite;
+}
+
 
 
 /* main  ============================*/
 .main {
     background: url(../img/contact/main.png) center no-repeat;
     background-size: 100% 100%;
-    height: 500px;
+    height: 600px;
     text-align: center;
 }
 
@@ -303,7 +342,7 @@ body {
     color: #fff;
     font-family: 'RomanticGumi';
     font-size: 55px;
-    padding-top: 150px;
+    padding-top: 180px;
     text-shadow: #4444446c 2px 2px 2px;
     line-height: 70px;
 }
@@ -352,16 +391,20 @@ body {
 
 /* text_box li 호버 효과 */
 .text_box li {
-    transition: transform 0.3s ease, 
-                background-color 0.3s ease, 
-                box-shadow 0.3s ease; /* 추가 */
+    transition: transform 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+    /* 추가 */
     cursor: pointer;
 }
 
 .text_box li:hover {
-    transform: translateY(-8px);           /* 위로 떠오름 */
-    background-color: #E9F2B6;            /* 색상 변경 */
-    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.12); /* 그림자 */
+    transform: translateY(-8px);
+    /* 위로 떠오름 */
+    background-color: #E9F2B6;
+    /* 색상 변경 */
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.12);
+    /* 그림자 */
 }
 
 
@@ -370,24 +413,27 @@ body {
     padding: 30px;
     margin-left: 35px;
 }
+
 .text_box h3 {
     font-size: 22px;
     margin-bottom: 10px;
 }
 
-.logo1{
+.logo1 {
     width: 82px;
     height: 80px;
     margin-top: 20px;
     margin-left: 5px;
 }
-.logo2{
+
+.logo2 {
     width: 82px;
     height: 80px;
     margin-top: 20px;
     margin-left: 5px;
 }
-.in_box{
+
+.in_box {
     margin-top: 30px;
 }
 
@@ -412,7 +458,8 @@ body {
     width: 100%;
     text-align: center;
 }
-.icon_boxx h3{
+
+.icon_boxx h3 {
     margin: 10px 0;
 }
 
@@ -423,16 +470,25 @@ body {
 
 /* text_box li 호버 효과 */
 .icon_boxx li {
-    transition: transform 0.3s ease, 
-                background-color 0.3s ease, 
-                box-shadow 0.3s ease; /* 추가 */
+    transition: transform 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+    /* 추가 */
     cursor: pointer;
 }
 
 .icon_boxx li:hover {
-    transform: translateY(-8px);           /* 위로 떠오름 */
-    background-color: #E9F2B6;            /* 색상 변경 */
-    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.12); /* 그림자 */
+    transform: translateY(-8px);
+    /* 위로 떠오름 */
+    display: block;
+    background-color: #E9F2B6;
+    /* 색상 변경 */
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.12);
+    /* 그림자 */
+}
+
+.icon_boxx li a {
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .block {
@@ -444,7 +500,7 @@ body {
     padding: 10px;
     display: block;
     text-align: center;
-        cursor: pointer;
+    cursor: pointer;
 
     /* 그림자 추가 */
     box-shadow: 0px 4px 0px #cac8c8be;
@@ -452,35 +508,42 @@ body {
     /* 부드러운 전환 */
     transition: all 0.1s ease;
 }
+
 /* 누를 때 효과 */
 .block:hover {
-    box-shadow: 0px 2px 0px #b0b0b0; /* 그림자 줄어듦 */
-    transform: translateY(2px);       /* 아래로 살짝 눌림 */
+    box-shadow: 0px 2px 0px #b0b0b0;
+    /* 그림자 줄어듦 */
+    transform: translateY(2px);
+    /* 아래로 살짝 눌림 */
     background-color: #d1d0d0;
 }
 
 /* 클릭 순간 */
 .block:active {
-    box-shadow: 0px 0px 0px #b0b0b0; /* 그림자 없어짐 */
-    transform: translateY(4px);       /* 더 눌림 */
+    box-shadow: 0px 0px 0px #b0b0b0;
+    /* 그림자 없어짐 */
+    transform: translateY(4px);
+    /* 더 눌림 */
 }
 
 
 /* 자주 묻는 질문 */
-.mac{
+.mac {
     width: 1320px;
     margin: 0 auto;
     background: url(../img/contact/mac.png) no-repeat center;
-    min-height: 942px;  
+    min-height: 942px;
     margin-top: 50px;
     padding: 40px 10px;
     position: relative;
     /* mac_text의 기준 상자! */
 }
+
 h2 {
     font-family: 'GoyangDeokyang';
 }
-.mac_text{
+
+.mac_text {
     width: 1077px;
     box-sizing: border-box;
     position: relative;
@@ -490,16 +553,19 @@ h2 {
     margin-bottom: 10px;
     border-bottom: 1px solid #ddd;
 }
-.text_boxx{
+
+.text_boxx {
     display: flex;
 }
-.title{
+
+.title {
     padding-top: 12px;
     padding-left: 20px;
     font-size: 19px;
     font-weight: bold;
 }
-.sub{
+
+.sub {
     margin-top: 20px;
     font-size: 17px;
     font-weight: 500;

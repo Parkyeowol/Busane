@@ -183,23 +183,26 @@ body {
 
 
 /* header_bottom - 배경 + gnb ---------*/
-.header_bottom {
+#header_bottom {
     background: url(../img/header+gnb/header_b.png) center no-repeat;
     background-size: 100% 100%;
     height: 250px;
+    overflow: hidden;
 }
 
 /* gnb */
-.gnb_wrap{
+.gnb_wrap {
     width: 1320px;
     margin: 0 auto;
 }
+
 .gnb {
     display: flex;
     justify-content: center;
-    padding-top: 180px;
     font-size: 15px;
     text-align: center;
+    overflow: hidden;
+    padding-top: 180px;
 }
 
 .gnb li a {
@@ -207,23 +210,92 @@ body {
     font-family: 'RomanticGumi';
     width: 40px;
     height: 53px;
-    padding:  8px 40px 0 40px;
+    padding: 8px 40px 0 40px;
     font-weight: 100;
 }
-.gnb li img{
+
+.gnb li img {
     width: 50px;
     height: 54px;
 }
 
-
 /* gnb 호버할 때 효과 */
 .gnb li {
+    display: flex;
+    flex-direction: column;
+    /* 세로 정렬 */
+    align-items: center;
+    /* 가로 중앙 정렬 */
     transition: transform 0.3s ease;
 }
 
 .gnb li:hover {
-    transform: translateY(-6px); /* 위로 6px 이동 */
+    transform: translateY(-6px);
+    /* 위로 6px 이동 */
 }
+
+/* 공통 막대 설정 */
+.bar {
+    display: none;
+    width: 70px;
+    height: 5px;
+    margin-top: 10px; 
+    margin-left: 10px;
+    background-color: transparent; /* 색상은 각 클래스에서 지정 */
+}
+.gnb li:hover .bar{
+    height: 5px;
+    display: block;      /* 호버했을 때도 보이도록 설정 */
+    transition: transform 0.3s ease linear;
+}
+.gnb li.active:hover .bar {
+    padding-bottom: 6px;
+}
+
+/* active 클래스가 있을 때만 막대 표시 */
+.gnb li.active .bar {
+    display: block;
+    margin-top: 5px;
+}
+
+/* 색상별 분기 처리 */
+.about .bar { background-color: #8acc7d; opacity: 40%; }
+.store .bar { background-color: #00bdff; opacity: 40%; }
+.with .bar  { background-color: #6d6e71; opacity: 40%; }
+.contact .bar { background-color: #ff487c; opacity: 40%;  }
+
+/* 스티키 */
+.ss {
+    width: 150px;
+    height: 400px;
+    position: fixed;
+    top: 75%;
+    right: 30px;
+    transform: translateY(-50%);
+    /* 세로 가운데 정렬 */
+    text-align: center;
+    z-index: 99;
+}
+
+.moda,
+.kaka {
+    width: 140px;
+    margin-bottom: -40px;
+    transition: transform 0.3s ease;
+}
+
+.moda:hover, .kaka:hover{
+    transform: translateY(-6px);
+}
+
+.mailb {
+    width: 140px;
+}
+
+.mailb:hover{
+    animation: tilting 1s ease-in-out infinite;
+}
+
 
 /* main ====================== */
 .main{
@@ -538,7 +610,7 @@ body {
 #footer {
     position: relative;
     height: 390px;
-    margin-top: 100px;
+    margin-top: -60px;
     padding: 0;
     margin-bottom: 0;
     overflow: hidden;
