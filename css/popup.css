@@ -1,0 +1,799 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+    color: rgb(26, 25, 25);
+    font-family: 'Pretendard';
+}
+
+/* 마우스 */
+/* 전체 요소를 선택하여 강제로 커서 고정 */
+* {
+  cursor: url('../img/sub/mouse.png') 10 10, auto !important;
+}
+
+/* 폰트연결 */
+@font-face {
+    font-family: 'Aggravo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroL.woff') format('woff');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Aggravo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroM.woff') format('woff');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Aggravo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'KakaoBigFont';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2503@1.0/KakaoBigSans-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'KakaoBigFont';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2503@1.0/KakaoBigSans-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'KakaoBigFont';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2503@1.0/KakaoBigSans-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+
+/* 메인 화면 - 배경(화면 전체) */
+.pool-header {
+    position: relative;
+    width: 100%;
+    height: 1019px;
+    overflow: hidden;
+    background: url('../img/popup/main/bg-wave.png') center / cover no-repeat;
+    animation: wobble 15s ease-in-out infinite;
+}
+
+/* 메인 화면 - 콘텐츠(1320px 고정, 가운데 정렬) */
+.pool-content {
+    position: relative;
+    width: 1320px;
+    height: 1019px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.sway-light {
+    z-index: 99;
+    animation: float-updown 5s ease-in-out infinite;
+}
+
+/* 아이스크림 - 살짝 기울었다 복귀 */
+.icecream-tilt {
+    z-index: 3;
+    animation: icecream-tilt var(--duration, 5s) ease-in-out infinite;
+}
+
+/* 튜브 - 좌우로 까딱 */
+.tube-rock {
+    z-index: 3;
+    animation: tube-rock var(--duration, 20s) ease-in-out infinite;
+}
+
+/* 비치볼 - 위아래+살짝 회전, 통통 튀는 느낌 */
+.ball-bounce {
+    z-index: 3;
+    animation: ball-bounce var(--duration, 5s) ease-in-out infinite;
+}
+
+.sway-tiny {
+    z-index: 6;
+    animation: float-updown 10s ease-in-out infinite;
+}
+
+.fixed {
+    z-index: 5;
+}
+
+@keyframes wobble {
+
+    0%,
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    25% {
+        transform: scale(1.008) rotate(0.3deg);
+    }
+
+    50% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    75% {
+        transform: scale(1.008) rotate(-0.3deg);
+    }
+}
+
+@keyframes float-updown {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes icecream-tilt {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(1deg);
+    }
+}
+
+@keyframes tube-rock {
+
+    0%,
+    100% {
+        transform: rotate(-1deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes ball-bounce {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(0deg);
+    }
+}
+
+/* 로고 움직이도록 설정 */
+.logo-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 7;
+}
+
+.logo-letter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: letter-rise 3.6s ease-out infinite;
+    animation-delay: var(--delay);
+}
+
+@keyframes letter-rise {
+    0% {
+        transform: translateY(24px);
+        opacity: 0;
+    }
+
+    12% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    90% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.spark {
+    position: absolute;
+    font-size: 28px;
+    color: #FFC857;
+    opacity: 0;
+    animation: sparkle-pop 3.6s ease-out infinite;
+}
+
+.s1 {
+    top: -5%;
+    left: 10%;
+    animation-delay: 1.1s;
+}
+
+.s2 {
+    top: -2%;
+    right: 8%;
+    animation-delay: 1.2s;
+}
+
+.s3 {
+    top: 40%;
+    right: -3%;
+    animation-delay: 1.3s;
+}
+
+@keyframes sparkle-pop {
+
+    0%,
+    30% {
+        opacity: 0;
+        transform: scale(0.3) rotate(0deg);
+    }
+
+    33% {
+        opacity: 1;
+        transform: scale(1.2) rotate(15deg);
+    }
+
+    42% {
+        opacity: 1;
+        transform: scale(0.9) rotate(0deg);
+    }
+
+    50%,
+    100% {
+        opacity: 0;
+        transform: scale(0.5) rotate(0deg);
+    }
+}
+
+
+
+
+/*============= sns 인증=============== */
+.sns_wrap {
+    width: 1320px;
+    margin: 80px auto;
+    height: 720px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 80px;
+}
+
+.img_box {
+    width: 600px;
+    height: 680px;
+    text-align: center;
+}
+
+.text_box {
+    width: 600px;
+    height: 680px;
+}
+
+.text_box h1 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: 'Aggravo';
+    font-size: 45px;
+    color: #2e414a;
+}
+
+.text_box h2 {
+    font-size: 25px;
+}
+
+.text_box span {
+    background-color: #e2f8ff;
+}
+
+.text_box span:hover {
+    font-weight: 900;
+    background-color: #7aa2fd;
+}
+
+.tag {
+    display: flex;
+}
+
+.tag_t {
+    text-align: center;
+    background-color: #adebff;
+    border-radius: 50px;
+    padding: 15px 30px;
+    margin: 40px 15px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.tag_t:hover {
+    background-color: #3c6ee7;
+    color: rgb(248, 246, 246);
+}
+
+.text_box p {
+    line-height: 30px;
+}
+
+.sns_boxx{
+    width: 500px;
+    box-sizing: border-box;
+    border-radius: 50px;
+    padding: 30px;
+    background-color: rgba(157, 216, 255, 0.363);
+}
+
+.title {
+    font-size: 23px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.t1 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.t2 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* 부사데이 소개 */
+.day_box {
+    width: 1050px;
+    height: 550px;
+    border: #52555750 0.5px solid;
+    border-radius: 20px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.day_box img {
+    margin-top: 50px;
+}
+
+.day_box p {
+    margin: 30px 0;
+    font-size: 28px;
+    color: #2e414a;
+    font-weight: 600;
+}
+
+/* =====배너1 - 신상제품====== */
+.banner1 {
+    width: 100%;
+    background: url(../img/popup/banner1.png) center no-repeat;
+    background-size: cover;
+    height: 273px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.small_t {
+    padding-top: 80px;
+    color: #4c6b7a;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.big_t {
+    padding-top: 20px;
+    color: #2e414a;
+    font-size: 65px;
+    font-family: 'Aggravo';
+    font-weight: 800;
+}
+
+/* 신상 제품 4개씩 */
+.items {
+    width: 1050px;
+    height: 250px;
+    margin: 0 auto;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.items li a:hover img {
+    animation: floatUp 0.6s ease-in-out;
+    filter: drop-shadow(0px 8px 6px rgba(0, 0, 0, 0.15));
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.items li a img {
+    transition: filter 1s ease;
+}
+
+.slide_inner ul li:hover img {
+    animation: floatUp 0.6s ease-in-out;
+    filter: drop-shadow(0px 8px 6px rgba(0, 0, 0, 0.15));
+}
+
+/* 밑에 네임택 */
+.items li {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.items li a {
+    position: relative;
+    display: block;
+}
+
+.item_tag {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(197, 242, 255, 0.85);
+    border-radius: 50px;
+    color: #313236;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    padding: 6px 0;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    opacity: 0;
+}
+
+.items li a:hover .item_tag {
+    transform: translateY(0);
+    opacity: 100%;
+}
+
+.block {
+    text-align: center;
+    width: 400px;
+    height: 60px;
+    margin: 50px auto 0;
+    background-color: #6d6e71;
+    border-radius: 50px;
+    font-size: 25px;
+    padding-top: 25px;
+    display: block;
+    cursor: pointer;
+    margin-bottom: 80px;
+    font-weight: 600;
+    color: rgb(252, 247, 247);
+    box-shadow: 0px 4px 0px #cac8c8be;
+    transition: all 0.1s ease;
+}
+
+.block:hover {
+    box-shadow: 0px 2px 0px #727272;
+    transform: translateY(2px);
+    background-color: #d4f5ff;
+    color: #2e414a;
+    font-weight: 800;
+}
+
+.block:active {
+    box-shadow: 0px 0px 0px #b0b0b0;
+    transform: translateY(4px);
+}
+
+/* 배너2 - 브랜드 특가 */
+.banner2 {
+    width: 100%;
+    background: url(../img/popup/banner2.png) center no-repeat;
+    background-size: cover;
+    height: 300px;
+    text-align: center;
+}
+
+.bg {
+    background: url(../img/popup/banner2_bg.png) center no-repeat;
+    height: 1340px;
+    background-size: cover;
+}
+
+.brand_wrap {
+    margin: 0 auto;
+    width: 910px;
+    height: 1240px;
+    padding-top: 50px;
+    text-align: left;
+    position: relative;
+}
+
+.brand_wrap li {
+    margin: 50px 0;
+}
+
+.brand_wrap li:nth-child(1) {
+    background: url(../img/popup/brand1.png) no-repeat left;
+    height: 251px;
+}
+
+.brand_wrap li:nth-child(2) {
+    background: url(../img/popup/brand2.png) no-repeat left;
+    height: 251px;
+}
+
+.brand_wrap li:nth-child(3) {
+    background: url(../img/popup/brand3.png) no-repeat left;
+    height: 251px;
+}
+
+.brand_wrap li:nth-child(4) {
+    background: url(../img/popup/brand4.png) no-repeat left;
+    height: 251px;
+}
+
+.brand_t {
+    width: 560px;
+    height: 250px;
+    box-sizing: border-box;
+    margin-left: 25px;
+    padding: 35px;
+}
+
+.brand_t h3 {
+    font-size: 30px;
+    font-family: 'KakaoBigFont';
+    color: #2e414a;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.brand_t p {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+/* 동그라미 위치 조정 */
+.b1-1 {
+    position: absolute;
+    left: 850px;
+    top: -30px;
+}
+
+.b1-1:hover {
+    animation: floatUp 0.6s ease-in-out;
+    filter: drop-shadow(0px 8px 6px rgba(0, 0, 0, 0.15));
+}
+
+.b2-1 {
+    position: absolute;
+    left: 850px;
+    top: -20px;
+}
+
+.b2-1:hover {
+    animation: floatUp 0.6s ease-in-out;
+    filter: drop-shadow(0px 8px 6px rgba(0, 0, 0, 0.15));
+}
+
+.b3-1 {
+    position: absolute;
+    left: 850px;
+    top: -20px;
+}
+
+.b3-1:hover {
+    animation: floatUp 0.6s ease-in-out;
+    filter: drop-shadow(0px 8px 6px rgba(0, 0, 0, 0.15));
+}
+
+.b4-1 {
+    position: absolute;
+    left: 850px;
+    top: -20px;
+}
+
+.b4-1:hover {
+    animation: floatUp 0.6s ease-in-out;
+    filter: drop-shadow(0px 8px 6px rgba(0, 0, 0, 0.15));
+}
+
+/*==== banner3 - 브랜드 모음==== */
+.banner3 {
+    width: 100%;
+    background: url(../img/popup/banner3.png) center no-repeat;
+    background-size: cover;
+    height: 300px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.b_join {
+    display: flex;
+    justify-content: space-around;
+    width: 1300px;
+    max-width: 100%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.b_join li a:hover {
+    animation: floatUp 0.6s ease-in-out;
+    filter: drop-shadow(0px 8px 6px rgba(0, 225, 255, 0.288));
+}
+
+/* =========footer======== */
+.footer{
+    background-color: #d6f5ff;
+    height: 450px;
+}
+.footer_b{
+    width: 1300px;
+    margin: 0 auto;
+    padding-top: 50px;
+    font-size: 18px;
+}
+.footer img{
+    margin-top: 20px;
+    width: 100px;
+}
+.day_box,
+.items,
+.brand_wrap,
+.footer_b,
+.b_join {
+    max-width: 100%;
+}
+
+/* footer 로고 호버하였을 때 */
+.f_logo img {
+    width: 120px;
+    transition: transform 0.3s ease;
+    /* 회전의 중심축을 아래쪽 가운데로 설정 (고개 까딱이는 느낌) */
+    transform-origin: bottom center;
+}
+
+/* 마우스를 올렸을 때(hover)의 상태 */
+.f_logo:hover img {
+    animation: tilting 1s ease-in-out infinite;
+}
+
+/* 좌우로 까딱거리는 동작 정의 */
+@keyframes tilting {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-5deg);
+    }
+
+    /* 왼쪽으로 5도 */
+    75% {
+        transform: rotate(5deg);
+    }
+
+    /* 오른쪽으로 5도 */
+    100% {
+        transform: rotate(0deg);
+    }
+
+    /* 다시 제자리 */
+}
