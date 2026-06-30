@@ -654,6 +654,9 @@ html, body {
 .kakaotalk {
     color: #505050;
 }
+.kakaotalk:hover{
+    background-color: rgba(255, 255, 0, 0.349);
+}
 
 
 /* footer 로고 호버하였을 때 */
